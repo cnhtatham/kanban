@@ -15,6 +15,24 @@
     transform: translate(-50%, 0)
 }
 
+.mainLogo {
+    position: absolute;
+    top: 40%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    font-size: 210px;
+    font-family: 'gilroy', 'Courier New', Courier, monospace;
+    color: #274e9a;
+    
+}
+
+.bracket {
+    font-size: 220px;
+    color: #f6b32f;
+    letter-spacing: 38px;
+    top: 5px;
+    position: relative;
+}
 /*
 .startScreen {
     
@@ -31,14 +49,6 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, 0)
-}
-
-.mainLogo {
-    height: 150px;
-    position: absolute;
-    left: 51%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .leftBracket {
