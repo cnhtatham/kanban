@@ -18,5 +18,16 @@ document.getElementById("mainButton").addEventListener("click", function () {
         $(".rightTriangle").css("display", "none")
         $(".leftTriangle").css("display", "none")
         $(".mainLogo").css("display", "none")
+
+        $("#imran").animate({
+            opacity: "0"
+        }, 1000)
+        $("#stuart").animate({
+            opacity: "0"
+        }, 1000)
+        setTimeout(function() {
+            $("#imran").css("display", "none")
+            $("#stuart").css("display", "none")
+        }, 1000)
     }, 700)
 })
