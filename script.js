@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 
     $('#sidebarCollapse').on('click', function () {
@@ -20,6 +22,17 @@ $(document).ready(function () {
             top: "30%",
             opacity: "0"
         }, 700)
+        setTimeout(function() {
+            $('#stuart_speech').animate({
+                opacity: '1'
+            })
+            setTimeout(function() {
+                $('#imran_speech').animate({
+                    opacity: '1'
+                })
+            }, 800)
+        }, 800)
+
         setTimeout(function () {
             $("#mainButton").css("display", "none")
             $(".rightTriangle").css("display", "none")
@@ -32,6 +45,13 @@ $(document).ready(function () {
             $("#stuart").animate({
                 opacity: "0"
             }, 2000)
+            $('#stuart_speech').animate({
+                opacity: '0'
+            }, 2000)
+            $('#imran_speech').animate({
+                opacity: '0'
+            }, 2000)
+
             setTimeout(function () {
                 $("#imran").css("display", "none")
                 $("#stuart").css("display", "none")
