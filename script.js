@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 
     $('#sidebarCollapse').on('click', function () {
@@ -22,6 +24,17 @@ $(document).ready(function () {
             top: "30%",
             opacity: "0"
         }, 700)
+        setTimeout(function() {
+            $('#stuart_speech').animate({
+                opacity: '1'
+            })
+            setTimeout(function() {
+                $('#imran_speech').animate({
+                    opacity: '1'
+                })
+            }, 800)
+        }, 800)
+
         setTimeout(function () {
             $("#mainButton").css("display", "none")
             $(".rightTriangle").css("display", "none")
@@ -34,25 +47,33 @@ $(document).ready(function () {
             $("#stuart").animate({
                 opacity: "0"
             }, 2000)
+            $('#stuart_speech').animate({
+                opacity: '0'
+            }, 2000)
+            $('#imran_speech').animate({
+                opacity: '0'
+            }, 2000)
+
             setTimeout(function () {
                 $("#imran").css("display", "none")
                 $("#stuart").css("display", "none")
             }, 2000)
-        }, 700)
+        }, 2000)
     })
 });
-/*
+
 $('#mainButton').hover(function () {
     $(this).animate({
-        height: '50px',
-        width: '15%',
-
-    }, 100)
+        backgroundColor: '#284e9b',
+        borderColor: 'white',
+    }, 500)
 }, function () {
     $(this).animate({
-        width: "60px",
-        height: "60px"
-    }, 100)
+        backgroundColor: '#3989ce',
+        borderColor: '#f6b32f',
+    }, 500)
 })
 
-*/
+
+
+
