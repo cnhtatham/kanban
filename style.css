@@ -46,9 +46,9 @@
     position: absolute;
     height: 60px;
     width: 60px;
-    top: 20%;
+    top: 60%;
     left: 50%;
-    transform: translate(-50%, 0)
+    transform: translate(-50%, 0);
 }
 
 .leftBracket {
