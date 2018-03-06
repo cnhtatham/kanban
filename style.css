@@ -99,6 +99,23 @@
     z-index: -1;
 }
 
+#stuart_speech {
+width: 8%;
+height: auto;
+position: absolute;
+bottom: 16%;
+right: 13%;
+opacity: 0;
+}
+
+#imran_speech {
+width: 8%;
+height: auto;
+position: absolute;
+bottom: 19%;
+left: 13%;
+opacity: 0;
+} 
 
 /* SIDE-BAR */
 .wrapper {

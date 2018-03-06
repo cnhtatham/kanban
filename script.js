@@ -22,6 +22,16 @@ $(document).ready(function () {
             top: "30%",
             opacity: "0"
         }, 700)
+        setTimeout(function() {
+           $('#stuart_speech').animate({
+               opacity: '1'
+           })
+           setTimeout(function() {
+               $('#imran_speech').animate({
+                   opacity: '1'
+               })
+           }, 800)
+            }, 800)
         setTimeout(function () {
             $("#mainButton").css("display", "none")
             $(".rightTriangle").css("display", "none")
