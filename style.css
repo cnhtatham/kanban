@@ -83,6 +83,8 @@
     clip-path: polygon(100% 10%, 0% 100%, 100% 100%);
 }
 
+
+
 a,
 a:hover,
 a:focus {
@@ -168,4 +170,21 @@ ul ul a {
     right: 0%;
     bottom: 0%;
     z-index: -1;
+}
+
+#stuart_speech {
+    width: 8%;
+    height: auto;
+    position: absolute;
+    bottom: 16%;
+    right: 13%;
+    opacity: 0
+}
+#imran_speech {
+    width: 8%;
+    height: auto;
+    position: absolute;
+    bottom: 19%;
+    left: 13%;
+    opacity: 0;
 }
