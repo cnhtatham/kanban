@@ -86,77 +86,6 @@
     clip-path: polygon(100% 10%, 0% 100%, 100% 100%);
 }
 
-a,
-a:hover,
-a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-#sidebar {
-    color: rgb(0, 0, 0);
-    transition: all 0.3s;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-}
-
-#sidebar ul.components {
-    border-bottom: 1px solid #47748b;
-}
-
-#sidebar ul p {
-    color: rgb(0, 0, 0);
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-
-#sidebar ul li a:hover {
-    background:  #f6b32f;
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: rgb(0, 0, 0);
-}
-
-ul ul a {
-    font-size: 0.9em;
-    padding-left: 30px;
-}
-
-.wrapper>.btn {
-    background: none;
-    color: #274e9a;
-}
-
-.wrapper {
-    position: absolute;
-    align-items: stretch;
-    top: 6%;
-    left: 97%;
-}
-
-#sidebar {
-    min-width: 100px;
-    max-width: 100px;
-    min-height: 50px;
-    margin-left: -50px;
-    margin-top: -150px;
-}
-
-#sidebar.active {
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
-
 #imran {
     position: absolute;
     width: 20%;
@@ -171,4 +100,90 @@ ul ul a {
     right: 0%;
     bottom: 0%;
     z-index: -1;
+}
+
+
+/* SIDE-BAR */
+.wrapper {
+    position: absolute;
+    align-items: stretch;
+    top: 6.5%;
+    right: 1%;
+    z-index: 9999;
+}
+
+.sideBtn {
+    background: #337ab7;
+    color: #fff;
+    border: 1px solid #337ab7;
+    width: 70px;
+    height: 50px;
+    padding: 6px 12px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sideBtn:active:focus {
+    outline: none;
+    border: transparent;
+}
+.sideBtn:focus {
+    outline: none;
+    border: none;
+}
+
+.sideBtn:active {
+    outline: none;
+    border: transparent;
+}
+
+.sideBtn:hover {
+    box-shadow: 1px 1px 1px;
+    background-color: #f6b32f;
+    color: #fff;
+    border: #f6b32f;
+}
+
+.activeBtn {
+    outline: none;
+    border: 1px solid #f6b32f;
+    color: #fff;
+    background-color: #f6b32f;
+
+}
+
+#sidebar {
+    transition: all 0.3s;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 50px;
+    margin-left: -50px;
+    margin-top: -150px;
+    
+}
+
+#sidebar.active {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    background:  #f6b32f;
+}
+#sidebar ul.components {
+    border-bottom: 1px solid #47748b;
 }
