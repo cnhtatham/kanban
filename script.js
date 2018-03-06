@@ -10,15 +10,24 @@ document.getElementById("mainButton").addEventListener("click", function () {
         opacity: "0"
     }, 700)
     $(".mainLogo").animate({
-        top: "90%",
+        top: "30%",
         opacity: "0"
     }, 700)
     setTimeout(function () {
         $("#mainButton").css("display", "none")
         $(".rightTriangle").css("display", "none")
         $(".leftTriangle").css("display", "none")
-
         $(".mainLogo").css("display", "none")
+        $("#imran").animate({
+            opacity: "0"
+        }, 1000)
+        $("#stuart").animate({
+            opacity: "0"
+        }, 1000)
+        setTimeout(function() {
+            $("#imran").css("display", "none")
+            $("#stuart").css("display", "none")
+        }, 1000)
 
 
     }, 700)

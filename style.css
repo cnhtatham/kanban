@@ -23,7 +23,6 @@
     font-size: 210px;
     font-family: 'gilroy', 'Courier New', Courier, monospace;
     color: #274e9a;
-    
 }
 
 .bracket {
@@ -33,13 +32,12 @@
     top: 5px;
     position: relative;
 }
+
 /*
 .startScreen {
     
     
 } */
-
-
 
 .btn-primary {
     font-size: 30px;
@@ -56,7 +54,7 @@
     height: 702px;
     width: 450px;
     background-color: #f6b32f;
-    top: 15%;
+    bottom: 0%;
     left: 0%;
     clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
@@ -66,7 +64,23 @@
     height: 454px;
     width: 580px;
     background-color: #f6b32f;
-    top: 45%;
+    bottom: 0%;
     right: 0%;
     clip-path: polygon(100% 10%, 0% 100%, 100% 100%);
+}
+
+#imran {
+    position: absolute;
+    width: 20%;
+    left: 0%;
+    bottom: 0%;
+    z-index: -1;
+}
+
+#stuart {
+    position: absolute;
+    width: 20%;
+    right: 0%;
+    bottom: 0%;
+    z-index: -1;
 }
