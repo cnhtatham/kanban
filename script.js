@@ -31,15 +31,16 @@ document.getElementById("mainButton").addEventListener("click", function () {
         }, 2000)
     }, 700)
 })
-
+/*
 $('#mainButton').hover(function() {
     $(this).animate({
-        width: "70px",
-        height: "70px"
+        height: '50px',
+        width: '15%',
+
     }, 100)
 }, function() {
     $(this).animate({
         width: "60px",
         height: "60px"
-    }, 100)
-})
+    }, 100) } 
+) */
