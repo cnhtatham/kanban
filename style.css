@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'gilroy';
+    src: url('fonts/Gilroy-Light.otf');
+}
+
 .navbar {
     background-color: #274e9a;
 }
