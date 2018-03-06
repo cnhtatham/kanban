@@ -118,11 +118,10 @@ ul ul a {
 }
 
 .wrapper {
+    position: absolute;
     align-items: stretch;
-    background: none;
-    background-color: transparent;
-    margin-top: 50px;
-    margin-left: 1550px;
+    top: 6%;
+    left: 97%;
 }
 
 #sidebar {
