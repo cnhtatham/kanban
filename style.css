@@ -9,3 +9,36 @@
     position: absolute;
     transform: translate(-50%, 0)
 }
+/*
+.startScreen {
+    
+    
+} */
+
+.mainImg {
+    height: 150px;
+    position: absolute;   
+    left: 51%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.leftTriangle {
+    position: absolute;
+    height: 700px;
+    width: 450px;
+    background-color: #f6b32f;
+    top: 15%;
+    left: 0%;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.rightTriangle {
+    position: absolute;
+    height: 450px;
+    width: 600px;
+    background-color: #f6b32f;
+    top: 45%;
+    left: 57%;
+    clip-path: polygon(100% 10%, 0% 100%, 100% 100%);
+}
