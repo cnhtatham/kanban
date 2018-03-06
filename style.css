@@ -23,7 +23,6 @@
     font-size: 210px;
     font-family: 'gilroy', 'Courier New', Courier, monospace;
     color: #274e9a;
-    
 }
 
 .bracket {
@@ -33,13 +32,12 @@
     top: 5px;
     position: relative;
 }
+
 /*
 .startScreen {
     
     
 } */
-
-
 
 .btn-primary {
     font-size: 30px;

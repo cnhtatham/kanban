@@ -16,7 +16,7 @@ document.getElementById("mainButton").addEventListener("click", function () {
     }, 700)
 
     $(".mainLogo").animate({
-        top: "90%",
+        top: "30%",
         opacity: "0"
     }, 700)
 
@@ -24,10 +24,7 @@ document.getElementById("mainButton").addEventListener("click", function () {
         $("#mainButton").css("display", "none")
         $(".rightTriangle").css("display", "none")
         $(".leftTriangle").css("display", "none")
-
         $(".mainLogo").css("display", "none")
-
-
     }, 700)
 
 })
