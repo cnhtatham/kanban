@@ -9,15 +9,26 @@
     position: absolute;
     transform: translate(-50%, 0)
 }
+
 /*
 .startScreen {
     
     
 } */
 
+.new-board-button {
+    position: absolute;
+    top: 10%;
+}
+
+.button {
+    font-size: 30px;
+    width: 140%;
+}
+
 .mainLogo {
     height: 150px;
-    position: absolute;   
+    position: absolute;
     left: 51%;
     top: 50%;
     transform: translate(-50%, -50%);
