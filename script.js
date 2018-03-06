@@ -19,5 +19,4 @@ document.getElementById("mainButton").addEventListener("click", function () {
         $(".leftTriangle").css("display", "none")
         $(".mainLogo").css("display", "none")
     }, 700)
-
 })
