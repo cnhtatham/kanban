@@ -42,18 +42,15 @@
     width: 15%;
     top: 80%;
     left: 50%;
+    background-color: #3989ce;
     transform: translate(-50%, 0);
     border-radius: 20px;
-     border: 2px white solid; 
+    border: 2px #f6b32f solid; 
 }
 
 .btn-primary:hover {
-    transform: translate(-51%, -1%);
-    background-color: #3989ce;
-    border-color: white;
-    border-radius: 20px;
-    font-size: 0.8em;
-    box-shadow: 3px 3px 3px lightgray
+    /*transform: translate(-51%, -1%);*/
+    box-shadow: 5px 4px 3px lightgray
 }
 
 .btn-primary:active:focus {

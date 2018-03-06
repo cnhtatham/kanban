@@ -36,21 +36,22 @@ $(document).ready(function () {
                 $("#imran").css("display", "none")
                 $("#stuart").css("display", "none")
             }, 2000)
-        }, 700)
+        }, 2000)
     })
 });
-/*
+
 $('#mainButton').hover(function () {
     $(this).animate({
-        height: '50px',
-        width: '15%',
-
-    }, 100)
+        backgroundColor: '#284e9b',
+        borderColor: 'white',
+    }, 500)
 }, function () {
     $(this).animate({
-        width: "60px",
-        height: "60px"
-    }, 100)
+        backgroundColor: '#3989ce',
+        borderColor: '#f6b32f',
+    }, 500)
 })
 
-*/
+
+
+
