@@ -51,18 +51,9 @@
     transform: translate(-50%, 0);
 }
 
-.leftBracket {
-    position: relative;
-}
-
-
-.rightBracket {
-    position: relative;
-}
-
 .leftTriangle {
     position: absolute;
-    height: 700px;
+    height: 702px;
     width: 450px;
     background-color: #f6b32f;
     top: 15%;
@@ -72,8 +63,8 @@
 
 .rightTriangle {
     position: absolute;
-    height: 450px;
-    width: 600px;
+    height: 454px;
+    width: 580px;
     background-color: #f6b32f;
     top: 45%;
     right: 0%;
