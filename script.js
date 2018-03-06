@@ -14,6 +14,7 @@ $(document).ready(function () {
         $("#mainButton").animate({
             top: "90%",
             opacity: "0"
+
         }, 700)
         $(".mainLogo").animate({
             top: "30%",
@@ -27,14 +28,26 @@ $(document).ready(function () {
 
             $("#imran").animate({
                 opacity: "0"
-            }, 1000)
-            $("#stuart").animate({
-                opacity: "0"
-            }, 1000)
-            setTimeout(function () {
-                $("#imran").css("display", "none")
-                $("#stuart").css("display", "none")
-            }, 1000)
-        }, 700)
-    })
+        }, 2000)
+        $("#stuart").animate({
+            opacity: "0"
+        }, 2000)
+        setTimeout(function() {
+            $("#imran").css("display", "none")
+            $("#stuart").css("display", "none")
+        }, 2000)
+    }, 700)
+})
 });
+$('#mainButton').hover(function() {
+    $(this).animate({
+        width: "70px",
+        height: "70px"
+    }, 100)
+}, function() {
+    $(this).animate({
+        width: "60px",
+        height: "60px"
+    }, 100)
+})
+
