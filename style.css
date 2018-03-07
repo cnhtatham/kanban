@@ -1,11 +1,12 @@
 .navbar {
     background-color: #274e9a;
+    height: 8%;
 }
 
 .logo {
-    left: 50%;
+    left: 44%;
     height: 120px;
-    top: -35px;
+    top: -46%;
     position: absolute;
     transform: translate(-50%, 0);
 }
@@ -104,7 +105,12 @@
 
 
 /* SIDE-BAR */
+<<<<<<< HEAD
 .subNav {
+=======
+
+.wrapper {
+>>>>>>> 4d911ec98b967ce5e2a9e4b2966a92a35124ebf0
     position: absolute;
     align-items: stretch;
     top: 6.5%;
@@ -213,4 +219,76 @@ a:focus {
 
 #drop ul.components {
     border-bottom: 1px solid #47748b;
+}
+
+.list1 {
+    opacity: 0;
+    position: absolute;
+    left: 5%;
+    height: 88px;
+    top: 35%;
+    color: #1E6CBF;
+    border: 4px solid #1E6CBF;
+    border-radius: 10px; 
+    width: 20%;
+    background-color: #f6b32f;
+    display: inline-block;
+}
+
+header {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+#myInput {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-top: 2%;
+}
+
+ul li {
+    opacity: 0;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: white;
+    font-size: 18px;
+    transition: 0.2s;
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.taskBtn {
+    position: absolute;
+    background: none;
+    width: 40%;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+}
+
+.toDo {
+    height:fit-content;
+    clear: both;
+}
+
+#items {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
 }
