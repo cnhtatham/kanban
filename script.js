@@ -18,7 +18,11 @@ $(document).ready(function () {
 
     $('#themeButton').on('click', function () {
         theme = 'reverse'
-        $(".list1").css({"background-color": "##274e9a", "color": "#f6b32f", 'border-color': "#f6b32f"})
+        $(".list1").css({
+            "background-color": "##274e9a",
+            "color": "#f6b32f",
+            'border-color': "#f6b32f"
+        })
         $('body').css('background-color', 'white')
         $(".rightTriangle").css("background-color", "#274e9a")
         $(".leftTriangle").css("background-color", "#274e9a")
@@ -29,7 +33,11 @@ $(document).ready(function () {
 
     $('#homeThemeButton').on('click', function () {
         theme = 'default'
-        $(".list1").css({"background-color": "#f6b32f", "color": "#274e9a", 'border-color': "#274e9a"})
+        $(".list1").css({
+            "background-color": "#f6b32f",
+            "color": "#274e9a",
+            'border-color': "#274e9a"
+        })
         $("body").css("background-color", 'white')
         $(".rightTriangle").css("background-color", "#f6b32f")
         $(".leftTriangle").css("background-color", "#f6b32f")
@@ -38,17 +46,17 @@ $(document).ready(function () {
         $("#mainButton").css("border-color", '#f6b32f')
     })
 
-$('#sideBarButton').on('click', function () {
-    $('#drop').toggleClass('active');
-    $('#sideBarButton').toggleClass('sideBarButtonActive');
-     });
+    $('#sideBarButton').on('click', function () {
+        $('#drop').toggleClass('active');
+        $('#sideBarButton').toggleClass('sideBarButtonActive');
+    });
 
 
-$('#subMenu').on("click", function(e){
-    $(this).next('ul').toggle();
+    $('#subMenu').on("click", function (e) {
+        $(this).next('ul').toggle();
         e.stopPropagation();
         e.preventDefault();
-      });
+    });
 
     document.getElementById("mainButton").addEventListener("click", function () {
         $("#mainButton").stop();
@@ -87,6 +95,9 @@ $('#subMenu').on("click", function(e){
             $(".list1").css("display", "block")
             $(".list1").animate({
                 opacity: "1"
+            }, 2000)
+            $('body').animate({
+                backgroundColor: '#337ab7'
             }, 2000)
             $("#imran").animate({
                 opacity: "0"
@@ -128,14 +139,14 @@ $('#subMenu').on("click", function(e){
             list1.height(curHeight).animate({
                 height: autoHeight + 15
             }, 500);
-            setTimeout(function() {
+            setTimeout(function () {
                 $("li").animate({
                     opacity: "1"
                 }, 200)
             }, 500)
 
         }
-
+        var close = document.getElementsByClassName("close");
         document.getElementById("myInput").value = "";
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
@@ -144,31 +155,23 @@ $('#subMenu').on("click", function(e){
         li.appendChild(span);
         for (i = 0; i < close.length; i++) {
             close[i].onclick = function () {
+                $('.list1').stop();
                 var div = this.parentElement;
                 $(this.parentElement).animate({
                     opacity: "0"
                 }, 200)
-                setTimeout(function() {
+                setTimeout(function () {
                     div.style.display = "none";
-                curHeight = list1.height();
-                autoHeight = list1.css('height', 'auto').height();
-                list1.height(curHeight).animate({
-                    height: autoHeight + 12
-                }, 500);
+                    curHeight = list1.height();
+                    autoHeight = list1.css('height', 'auto').height();
+                    list1.height(curHeight).animate({
+                        height: autoHeight + 12
+                    }, 500);
                 }, 200)
             }
         }
     })
 })
-
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-        var div = this.parentElement;
-        div.style.display = "none";
-    }
-}
 
 $('#mainButton').hover(function () {
     if (theme === 'default') {
