@@ -1,29 +1,27 @@
-let yahoo = document.getElementById("yahoo")
-let no = document.getElementById("no")
-let theme = 'default'
-
-$('#themeButton').on('click', function () {
-    theme = 'reverse'
-    $('body').css('background-color', 'white')
-    $(".rightTriangle").css("background-color", "#274e9a")
-    $(".leftTriangle").css("background-color", "#274e9a")
-    $(".navbar").css("background-color", "#f6b32f")
-    $("#mainButton").css("background-color", '#ffcc67')
-    $("#mainButton").css("border-color", '#274e9a')
-})
-
-$('#homeThemeButton').on('click', function () {
-    theme = 'default'
-    $("body").css("background-color", 'white')
-    $(".rightTriangle").css("background-color", "#f6b32f")
-    $(".leftTriangle").css("background-color", "#f6b32f")
-    $(".navbar").css("background-color", "#274e9a")
-    $("#mainButton").css("background-color", '#274e9a')
-    $("#mainButton").css("border-color", '#f6b32f')
-})
-
+document.getElementById("list1").style.display = "none";
 
 $(document).ready(function () {
+
+
+    $('#themeButton').on('click', function () {
+        theme = 'reverse'
+        $('body').css('background-color', 'white')
+        $(".rightTriangle").css("background-color", "#274e9a")
+        $(".leftTriangle").css("background-color", "#274e9a")
+        $(".navbar").css("background-color", "#f6b32f")
+        $("#mainButton").css("background-color", '#ffcc67')
+        $("#mainButton").css("border-color", '#274e9a')
+    })
+
+    $('#homeThemeButton').on('click', function () {
+        theme = 'default'
+        $("body").css("background-color", 'white')
+        $(".rightTriangle").css("background-color", "#f6b32f")
+        $(".leftTriangle").css("background-color", "#f6b32f")
+        $(".navbar").css("background-color", "#274e9a")
+        $("#mainButton").css("background-color", '#274e9a')
+        $("#mainButton").css("border-color", '#f6b32f')
+    })
 
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
@@ -86,36 +84,78 @@ $(document).ready(function () {
             }, 2000)
         }, 2000)
     })
+
+    var list1Height = 10
+    document.querySelector(".taskBtn").addEventListener('click', function () {
+        document.getElementById("myInput").style.display = "block";
+        document.getElementById("listButton").style.display = "block";
+        list1Height += 15
+        $(".list1").css("height", list1Height + "%")
+    })
+
+    document.querySelector(".addBtn").addEventListener('click', function () {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput").value;
+        var text = document.createTextNode(inputValue);
+        li.appendChild(text);
+        if (inputValue === '') {
+            alert("Enter something fool");
+        } else {
+            document.getElementById("items").appendChild(li);
+        }
+
+        document.getElementById("myInput").value = " ";
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+    })
+
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+    }
+
+    $('#mainButton').hover(function () {
+        if (theme === 'default') {
+            $(this).animate({
+                backgroundColor: '#f6b32f',
+                borderColor: 'white',
+
+            }, 300)
+        } else if (theme === 'reverse') {
+            $(this).animate({
+
+                backgroundColor: '#284e9b',
+                borderColor: 'white',
+            }, 300)
+        }
+
+    }, function () {
+        if (theme === 'default') {
+            $(this).animate({
+
+                backgroundColor: '#274e9a',
+                borderColor: '#f6b32f',
+            }, 300)
+        } else if (theme === 'reverse') {
+            $(this).animate({
+                backgroundColor: '#ffcc67',
+                borderColor: '#274e9a',
+            }, 300)
+        }
+
+    })
 });
-
-$('#mainButton').hover(function () {
-    if(theme === 'default') {
-    $(this).animate({
-        backgroundColor: '#f6b32f',
-        borderColor: 'white',
-        
-    }, 300)
-} else if(theme === 'reverse') {
-    $(this).animate({
-
-        backgroundColor: '#284e9b',
-        borderColor: 'white',
-    }, 300)
-}
-
-}, function () {
-    if(theme === 'default') {
-    $(this).animate({
-
-        backgroundColor: '#274e9a',
-        borderColor: '#f6b32f',
-    }, 300)
-} else if(theme === 'reverse') {
-    $(this).animate({
-        backgroundColor: '#ffcc67',
-        borderColor: '#274e9a',
-    }, 300)
-}
-
-})
-
