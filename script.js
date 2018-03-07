@@ -1,6 +1,6 @@
 document.getElementById("list1").style.display = "none";
 
-
+var list1 = $('#list1');
 let yahoo = document.getElementById("yahoo")
 let no = document.getElementById("no")
 
@@ -29,7 +29,7 @@ $('#homeThemeButton').on('click', function () {
 
 $(document).ready(function () {
     $(".logo").css("display", "none")
-    setTimeout(function() {
+    setTimeout(function () {
         $(".logo").css("display", "block")
         $(".logo").addClass("animated jackInTheBox")
     }, 100)
@@ -94,7 +94,10 @@ $(document).ready(function () {
             $(".rightTriangle").css("display", "none")
             $(".leftTriangle").css("display", "none")
             $(".mainLogo").css("display", "none")
-
+            $(".list1").css("display", "block")
+            $(".list1").animate({
+                opacity: "1"
+            }, 2000)
             $("#imran").animate({
                 opacity: "0"
             }, 2000)
@@ -120,12 +123,8 @@ $(document).ready(function () {
     var list1Height = 10
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
-        document.getElementById("listButton").style.display = "block";
-        list1Height += 15
-        $(".list1").css("height", list1Height + "%")
-    })
 
-    document.querySelector(".addBtn").addEventListener('click', function () {
+
         var li = document.createElement("li");
         var inputValue = document.getElementById("myInput").value;
         var text = document.createTextNode(inputValue);
@@ -134,9 +133,17 @@ $(document).ready(function () {
             alert("Enter something fool");
         } else {
             document.getElementById("items").appendChild(li);
+            list1Height += 8
+            var list1 = $('#list1');
+                curHeight = list1.height();
+                autoHeight = list1.css('height', 'auto').height();
+            list1.height(curHeight).animate({
+                height: autoHeight + 12
+            }, 500);
+            
         }
 
-        document.getElementById("myInput").value = " ";
+        document.getElementById("myInput").value = "";
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
         span.className = "close";
@@ -147,47 +154,52 @@ $(document).ready(function () {
             close[i].onclick = function () {
                 var div = this.parentElement;
                 div.style.display = "none";
+                curHeight = list1.height();
+                autoHeight = list1.css('height', 'auto').height();
+            list1.height(curHeight).animate({
+                height: autoHeight + 12
+            }, 500);
             }
         }
     })
+})
 
-    var close = document.getElementsByClassName("close");
-    var i;
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            var div = this.parentElement;
-            div.style.display = "none";
-        }
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+        var div = this.parentElement;
+        div.style.display = "none";
+    }
+}
+
+$('#mainButton').hover(function () {
+    if (theme === 'default') {
+        $(this).animate({
+            backgroundColor: '#f6b32f',
+            borderColor: 'white',
+
+        }, 300)
+    } else if (theme === 'reverse') {
+        $(this).animate({
+
+            backgroundColor: '#284e9b',
+            borderColor: 'white',
+        }, 300)
     }
 
-    $('#mainButton').hover(function () {
-        if (theme === 'default') {
-            $(this).animate({
-                backgroundColor: '#f6b32f',
-                borderColor: 'white',
+}, function () {
+    if (theme === 'default') {
+        $(this).animate({
 
-            }, 300)
-        } else if (theme === 'reverse') {
-            $(this).animate({
+            backgroundColor: '#274e9a',
+            borderColor: '#f6b32f',
+        }, 300)
+    } else if (theme === 'reverse') {
+        $(this).animate({
+            backgroundColor: '#ffcc67',
+            borderColor: '#274e9a',
+        }, 300)
+    }
 
-                backgroundColor: '#284e9b',
-                borderColor: 'white',
-            }, 300)
-        }
-
-    }, function () {
-        if (theme === 'default') {
-            $(this).animate({
-
-                backgroundColor: '#274e9a',
-                borderColor: '#f6b32f',
-            }, 300)
-        } else if (theme === 'reverse') {
-            $(this).animate({
-                backgroundColor: '#ffcc67',
-                borderColor: '#274e9a',
-            }, 300)
-        }
-
-    })
-});
+})

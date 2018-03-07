@@ -191,12 +191,13 @@ a:focus {
 }
 
 .list1 {
+    opacity: 0;
     position: absolute;
     left: 5%;
+    height: 88px;
     top: 35%;
     border: 2px solid #1E6CBF;
     width: 20%;
-    height: 10%;
     background-color: #D8CEA8;
     display: inline-block;
 }
@@ -207,24 +208,10 @@ header {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.addBtn {
-    background-color: green;
-    font-size: 18px;
-    border-radius: 10%;
-    position: relative;
-    color: white;
-    padding: 1%;
-    left: -4%;
-    margin: 5px;
-    padding: 3px;
-}
 
 #myInput {
     width: 100%;
-}
-
-ul {
-    margin-top: 2%;
+    margin-bottom: 10px;
 }
 
 ul {
@@ -244,6 +231,8 @@ ul li {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
 .taskBtn {
@@ -252,4 +241,17 @@ ul li {
     width: 100%;
     bottom: 0%;
     left: 0%;
+}
+
+.toDo {
+    height:fit-content;
+    clear: both;
+}
+
+#items {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
 }
