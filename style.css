@@ -7,7 +7,7 @@
     height: 120px;
     top: -35px;
     position: absolute;
-    transform: translate(-50%, 0)
+    transform: translate(-50%, 0);
 }
 
 .mainLogo {
@@ -16,15 +16,10 @@
     left: 52%;
     width: 60%;
     transform: translate(-50%, -50%);
-    font-family: 'gilroy', 'Courier New', Courier, monospace;
     margin: 50px auto;
 }
 
-/*
-.startScreen {
-    
-    
-} */
+/* NEW-BOARD-BUTTON */
 
 .btn-primary {
     position: absolute;
@@ -35,23 +30,23 @@
     background-color: #274e9a;
     transform: translate(-50%, 0);
     border-radius: 20px;
-    border: 2px #f6b32f solid; 
+    border: 2px #f6b32f solid;
 }
 
 .btn-primary:hover {
     /*transform: translate(-51%, -1%);*/
-    box-shadow: 5px 4px 3px lightgray
+    box-shadow: 5px 4px 3px lightgray;
 }
 
 .btn-primary:active:focus {
     outline: none;
     border: transparent;
-} 
+}
 
 .btn-primary:focus {
     outline: none;
     border: transparent;
-} 
+}
 
 .leftTriangle {
     position: absolute;
@@ -90,22 +85,22 @@
 }
 
 #stuart_speech {
-width: 8%;
-height: auto;
-position: absolute;
-bottom: 16%;
-right: 13%;
-opacity: 0;
+    width: 8%;
+    height: auto;
+    position: absolute;
+    bottom: 16%;
+    right: 13%;
+    opacity: 0;
 }
 
 #imran_speech {
-width: 8%;
-height: auto;
-position: absolute;
-bottom: 19%;
-left: 13%;
-opacity: 0;
-} 
+    width: 8%;
+    height: auto;
+    position: absolute;
+    bottom: 19%;
+    left: 13%;
+    opacity: 0;
+}
 
 /* SIDE-BAR */
 .wrapper {
@@ -132,6 +127,7 @@ opacity: 0;
     outline: none;
     border: transparent;
 }
+
 .sideBtn:focus {
     outline: none;
     border: none;
@@ -154,7 +150,6 @@ opacity: 0;
     border: 1px solid #f6b32f;
     color: #fff;
     background-color: #f6b32f;
-
 }
 
 #sidebar {
@@ -164,7 +159,6 @@ opacity: 0;
     min-height: 50px;
     margin-left: -50px;
     margin-top: -150px;
-    
 }
 
 #sidebar.active {
@@ -185,9 +179,11 @@ a:focus {
     font-size: 1.1em;
     display: block;
 }
+
 #sidebar ul li a:hover {
-    background:  #f6b32f;
+    background: #f6b32f;
 }
+
 #sidebar ul.components {
     border-bottom: 1px solid #47748b;
 }
