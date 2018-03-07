@@ -16,18 +16,8 @@
     left: 52%;
     width: 60%;
     transform: translate(-50%, -50%);
-    /* font-size: 170px; */
     font-family: 'gilroy', 'Courier New', Courier, monospace;
-    color: #274e9a;
     margin: 50px auto;
-}
-
-.bracket {
-    font-size: 220px;
-    color: #f6b32f;
-    letter-spacing: 38px;
-    top: 5px;
-    position: relative;
 }
 
 /*
@@ -42,7 +32,7 @@
     width: 15%;
     top: 80%;
     left: 50%;
-    background-color: #3989ce;
+    background-color: #274e9a;
     transform: translate(-50%, 0);
     border-radius: 20px;
     border: 2px #f6b32f solid; 

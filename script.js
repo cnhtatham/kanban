@@ -1,3 +1,27 @@
+
+let theme = 'default'
+
+$('#themebutton').on('click', function() {
+    theme = 'reverse'
+    $('body').css('background-color', 'white')
+    $(".rightTriangle").css("background-color", "#274e9a")
+    $(".leftTriangle").css("background-color", "#274e9a")
+    $(".navbar").css("background-color", "#f6b32f" )
+    $("#mainButton").css("background-color", '#ffcc67')
+    $("#mainButton").css("border-color", '#274e9a')
+})
+
+$('#matrixthemebutton').on('click', function() {
+    theme = 'matrix'
+    $("body").css("background-color", 'black')
+    $(".rightTriangle").css("background-color", "limegreen")
+    $(".leftTriangle").css("background-color", "limegreen")
+    $(".navbar").css("background-color", "limegreen" )
+    $("#mainButton").css("background-color", 'black')
+    $("#mainButton").css("border-color", 'limegreen')
+})
+
+
 $(document).ready(function () {
 
     $('#sidebarCollapse').on('click', function () {
@@ -53,16 +77,34 @@ $(document).ready(function () {
 });
 /*
 $('#mainButton').hover(function () {
+    if(theme === 'default') {
     $(this).animate({
-        height: '50px',
-        width: '15%',
+        backgroundColor: '#f6b32f',
+        borderColor: 'white',
+        
+    }, 500)
+} else if(theme === 'reverse') {
+    $(this).animate({
 
-    }, 100)
+        backgroundColor: '#284e9b',
+        borderColor: 'white',
+    }, 500)
+}
+
 }, function () {
+    if(theme === 'default') {
     $(this).animate({
-        width: "60px",
-        height: "60px"
-    }, 100)
+
+        backgroundColor: '#274e9a',
+        borderColor: '#f6b32f',
+    }, 500)
+} else if(theme === 'reverse') {
+    $(this).animate({
+        backgroundColor: '#ffcc67',
+        borderColor: '#274e9a',
+    }, 500)
+}
+
 })
 
 */
