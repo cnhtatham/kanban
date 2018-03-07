@@ -1,3 +1,4 @@
+
 let theme = 'default'
 
 $('#themebutton').on('click', function() {
@@ -20,10 +21,13 @@ $('#matrixthemebutton').on('click', function() {
     $("#mainButton").css("border-color", 'limegreen')
 })
 
+
 $(document).ready(function () {
 
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
+        $('#sidebarCollapse').toggleClass('activeBtn');
+
     });
 
     document.getElementById("mainButton").addEventListener("click", function () {
@@ -43,16 +47,15 @@ $(document).ready(function () {
             opacity: "0"
         }, 700)
         setTimeout(function() {
-            $('#stuart_speech').animate({
-                opacity: '1'
-            })
-            setTimeout(function() {
-                $('#imran_speech').animate({
-                    opacity: '1'
-                })
+           $('#stuart_speech').animate({
+               opacity: '1'
+           })
+           setTimeout(function() {
+               $('#imran_speech').animate({
+                   opacity: '1'
+               })
+           }, 800)
             }, 800)
-        }, 800)
-
         setTimeout(function () {
             $("#mainButton").css("display", "none")
             $(".rightTriangle").css("display", "none")
@@ -65,21 +68,14 @@ $(document).ready(function () {
             $("#stuart").animate({
                 opacity: "0"
             }, 2000)
-            $('#stuart_speech').animate({
-                opacity: '0'
-            }, 2000)
-            $('#imran_speech').animate({
-                opacity: '0'
-            }, 2000)
-
             setTimeout(function () {
                 $("#imran").css("display", "none")
                 $("#stuart").css("display", "none")
             }, 2000)
-        }, 2000)
+        }, 700)
     })
 });
-
+/*
 $('#mainButton').hover(function () {
     if(theme === 'default') {
     $(this).animate({
@@ -89,13 +85,16 @@ $('#mainButton').hover(function () {
     }, 500)
 } else if(theme === 'reverse') {
     $(this).animate({
+
         backgroundColor: '#284e9b',
         borderColor: 'white',
     }, 500)
 }
+
 }, function () {
     if(theme === 'default') {
     $(this).animate({
+
         backgroundColor: '#274e9a',
         borderColor: '#f6b32f',
     }, 500)
@@ -105,8 +104,7 @@ $('#mainButton').hover(function () {
         borderColor: '#274e9a',
     }, 500)
 }
+
 })
 
-
-
-
+*/
