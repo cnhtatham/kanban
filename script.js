@@ -1,6 +1,6 @@
 let theme = 'default'
 
-$('#themebutton').on('click', function () {
+$('#themeButton').on('click', function () {
     theme = 'reverse'
     $('body').css('background-color', 'white')
     $(".rightTriangle").css("background-color", "#274e9a")
@@ -10,14 +10,14 @@ $('#themebutton').on('click', function () {
     $("#mainButton").css("border-color", '#274e9a')
 })
 
-$('#matrixthemebutton').on('click', function () {
-    theme = 'matrix'
-    $("body").css("background-color", 'black')
-    $(".rightTriangle").css("background-color", "limegreen")
-    $(".leftTriangle").css("background-color", "limegreen")
-    $(".navbar").css("background-color", "limegreen")
-    $("#mainButton").css("background-color", 'black')
-    $("#mainButton").css("border-color", 'limegreen')
+$('#homeThemeButton').on('click', function () {
+    theme = 'default'
+    $("body").css("background-color", 'white')
+    $(".rightTriangle").css("background-color", "#f6b32f")
+    $(".leftTriangle").css("background-color", "#f6b32f")
+    $(".navbar").css("background-color", "#274e9a")
+    $("#mainButton").css("background-color", '#274e9a')
+    $("#mainButton").css("border-color", '#f6b32f')
 })
 
 
