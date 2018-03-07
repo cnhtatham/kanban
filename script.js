@@ -1,5 +1,6 @@
 let yahoo = document.getElementById("yahoo")
 let no = document.getElementById("no")
+
 let theme = 'default'
 
 $('#themeButton').on('click', function () {
@@ -24,6 +25,11 @@ $('#homeThemeButton').on('click', function () {
 
 
 $(document).ready(function () {
+    $(".logo").css("display", "none")
+    setTimeout(function() {
+        $(".logo").css("display", "block")
+        $(".logo").addClass("animated jackInTheBox")
+    }, 100)
 
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
@@ -82,7 +88,7 @@ $(document).ready(function () {
                 $("#stuart").css("display", "none")
                 $("#stuart_speech").css("display", "none")
                 $("#imran_speech").css("display", "none")
-
+                $(".startScreen").css("display", "none")
             }, 2000)
         }, 2000)
     })
