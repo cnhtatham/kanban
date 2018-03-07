@@ -98,7 +98,6 @@ $('#subMenu').on("click", function(e){
         }, 2000)
     })
 
-    var list1Height = 10
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
 
@@ -111,12 +110,11 @@ $('#subMenu').on("click", function(e){
             alert("Enter something fool");
         } else {
             document.getElementById("items").appendChild(li);
-            list1Height += 8
             var list1 = $('#list1');
             curHeight = list1.height();
             autoHeight = list1.css('height', 'auto').height();
             list1.height(curHeight).animate({
-                height: autoHeight + 12
+                height: autoHeight + 15
             }, 500);
             setTimeout(function() {
                 $("li").animate({

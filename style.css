@@ -240,7 +240,7 @@ header {
 #myInput {
     width: 90%;
     margin-bottom: 10px;
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translate(-50%, 0);
 }
@@ -276,6 +276,7 @@ ul {
     left: 50%;
     transform: translateX(-50%);
     border: none;
+    padding-bottom: 4px;
 }
 
 .toDo {
