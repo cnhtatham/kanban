@@ -1,4 +1,5 @@
 document.getElementById("list1").style.display = "none";
+document.getElementById("myInput").style.display = "none";
 
 var list1 = $('#list1');
 let yahoo = document.getElementById("yahoo")
@@ -120,10 +121,13 @@ $(document).ready(function () {
             }, 2000)
         }, 2000)
     })
-
-    document.querySelector(".taskBtn").addEventListener('click', function () {
+    document.querySelector(".taskBtn").addEventListener('click', function() {
         document.getElementById("myInput").style.display = "block";
+    })
 
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            document.getElementById("myInput").style.display = "block";
 
         var li = document.createElement("li");
         var inputValue = document.getElementById("myInput").value;
@@ -170,7 +174,7 @@ $(document).ready(function () {
                 }, 200)
             }
         }
-    })
+    });
 })
 
 $('#mainButton').hover(function () {
