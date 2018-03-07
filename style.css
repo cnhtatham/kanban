@@ -4,7 +4,7 @@
 }
 
 .logo {
-    left: 44%;
+    left: 50%;
     height: 120px;
     top: -46%;
     position: absolute;
@@ -105,12 +105,7 @@
 
 
 /* SIDE-BAR */
-<<<<<<< HEAD
 .subNav {
-=======
-
-.wrapper {
->>>>>>> 4d911ec98b967ce5e2a9e4b2966a92a35124ebf0
     position: absolute;
     align-items: stretch;
     top: 6.5%;
@@ -243,15 +238,18 @@ header {
 
 
 #myInput {
-    width: 100%;
+    width: 90%;
     margin-bottom: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 ul {
     margin-top: 2%;
 }
 
-ul li {
+#items li {
     opacity: 0;
     color: black;
     cursor: pointer;
