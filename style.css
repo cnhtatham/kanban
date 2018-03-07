@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'gilroy';
+    src: url(fonts/Gilroy-Light.otf);
+}
+
 .navbar {
     background-color: #274e9a;
     height: 8%;
@@ -216,6 +221,10 @@ a:focus {
     border-bottom: 1px solid #47748b;
 }
 
+.cont {
+    font-family: 'gilroy', Courier, monospace;
+}
+
 .list1 {
     opacity: 0;
     position: absolute;
@@ -223,8 +232,7 @@ a:focus {
     height: 88px;
     top: 35%;
     color: #1E6CBF;
-    border: 4px solid #1E6CBF;
-    border-radius: 10px; 
+    border-radius: 5px; 
     width: 20%;
     background-color: lightgrey;
     display: inline-block;
@@ -233,7 +241,7 @@ a:focus {
 header {
     text-align: center;
     font-size: 1.5em;
-    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
 }
 
 
@@ -272,12 +280,32 @@ ul {
 .taskBtn {
     position: absolute;
     background: none;
-    width: 40%;
+    width: 100%;
     bottom: 0%;
+    height: 25px;
     left: 50%;
     transform: translateX(-50%);
     border: none;
-    padding-bottom: 4px;
+    color: white;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-bottom: 1px;
+}
+
+.taskBtn:active:focus {
+    outline: none;
+    border: transparent;
+}
+
+.taskBtn:focus {
+    outline: none;
+    border: none;
+}
+
+.taskBtn:active {
+    outline: none;
+    border: transparent;
+    background-color: #999999;
 }
 
 .toDo {
