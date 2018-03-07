@@ -1,4 +1,5 @@
 document.getElementById("list1").style.display = "none";
+document.getElementById("myInput").style.display = "none";
 
 var list1 = $('#list1');
 let yahoo = document.getElementById("yahoo")
@@ -18,7 +19,11 @@ $(document).ready(function () {
 
     $('#themeButton').on('click', function () {
         theme = 'reverse'
-        $(".list1").css({"background-color": "##274e9a", "color": "#f6b32f", 'border-color': "#f6b32f"})
+        $(".list1").css({
+            "background-color": "##274e9a",
+            "color": "#f6b32f",
+            'border-color': "#f6b32f"
+        })
         $('body').css('background-color', 'white')
         $(".rightTriangle").css("background-color", "#274e9a")
         $(".leftTriangle").css("background-color", "#274e9a")
@@ -29,7 +34,11 @@ $(document).ready(function () {
 
     $('#homeThemeButton').on('click', function () {
         theme = 'default'
-        $(".list1").css({"background-color": "#f6b32f", "color": "#274e9a", 'border-color': "#274e9a"})
+        $(".list1").css({
+            "background-color": "#f6b32f",
+            "color": "#274e9a",
+            'border-color': "#274e9a"
+        })
         $("body").css("background-color", 'white')
         $(".rightTriangle").css("background-color", "#f6b32f")
         $(".leftTriangle").css("background-color", "#f6b32f")
@@ -38,17 +47,17 @@ $(document).ready(function () {
         $("#mainButton").css("border-color", '#f6b32f')
     })
 
-$('#sideBarButton').on('click', function () {
-    $('#drop').toggleClass('active');
-    $('#sideBarButton').toggleClass('sideBarButtonActive');
-     });
+    $('#sideBarButton').on('click', function () {
+        $('#drop').toggleClass('active');
+        $('#sideBarButton').toggleClass('sideBarButtonActive');
+    });
 
 
-$('#subMenu').on("click", function(e){
-    $(this).next('ul').toggle();
+    $('#subMenu').on("click", function (e) {
+        $(this).next('ul').toggle();
         e.stopPropagation();
         e.preventDefault();
-      });
+    });
 
     document.getElementById("mainButton").addEventListener("click", function () {
         $("#mainButton").stop();
@@ -109,56 +118,61 @@ $('#subMenu').on("click", function(e){
             }, 2000)
         }, 2000)
     })
-
-    document.querySelector(".taskBtn").addEventListener('click', function () {
+    document.querySelector(".taskBtn").addEventListener('click', function() {
         document.getElementById("myInput").style.display = "block";
+    })
+
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            document.getElementById("myInput").style.display = "block";
 
 
-        var li = document.createElement("li");
-        var inputValue = document.getElementById("myInput").value;
-        var text = document.createTextNode(inputValue);
-        li.appendChild(text);
-        if (inputValue === '') {
-            alert("Enter something fool");
-        } else {
-            document.getElementById("items").appendChild(li);
-            var list1 = $('#list1');
-            curHeight = list1.height();
-            autoHeight = list1.css('height', 'auto').height();
-            list1.height(curHeight).animate({
-                height: autoHeight + 15
-            }, 500);
-            setTimeout(function() {
-                $("li").animate({
-                    opacity: "1"
-                }, 200)
-            }, 500)
-
-        }
-
-        document.getElementById("myInput").value = "";
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        li.appendChild(span);
-        for (i = 0; i < close.length; i++) {
-            close[i].onclick = function () {
-                var div = this.parentElement;
-                $(this.parentElement).animate({
-                    opacity: "0"
-                }, 200)
-                setTimeout(function() {
-                    div.style.display = "none";
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var text = document.createTextNode(inputValue);
+            li.appendChild(text);
+            if (inputValue === '') {
+                alert("Enter something fool");
+            } else {
+                document.getElementById("items").appendChild(li);
+                var list1 = $('#list1');
                 curHeight = list1.height();
                 autoHeight = list1.css('height', 'auto').height();
                 list1.height(curHeight).animate({
-                    height: autoHeight + 12
+                    height: autoHeight + 15
                 }, 500);
-                }, 200)
+                setTimeout(function () {
+                    $("li").animate({
+                        opacity: "1"
+                    }, 200)
+                }, 500)
+
+            }
+
+            document.getElementById("myInput").value = "";
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    $(this.parentElement).animate({
+                        opacity: "0"
+                    }, 200)
+                    setTimeout(function () {
+                        div.style.display = "none";
+                        curHeight = list1.height();
+                        autoHeight = list1.css('height', 'auto').height();
+                        list1.height(curHeight).animate({
+                            height: autoHeight + 12
+                        }, 500);
+                    }, 200)
+                }
             }
         }
-    })
+    });
 })
 
 var close = document.getElementsByClassName("close");
