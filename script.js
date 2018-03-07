@@ -6,32 +6,43 @@ let no = document.getElementById("no")
 
 let theme = 'default'
 
-$('#themeButton').on('click', function () {
-    theme = 'reverse'
-    $('body').css('background-color', 'white')
-    $(".rightTriangle").css("background-color", "#274e9a")
-    $(".leftTriangle").css("background-color", "#274e9a")
-    $(".navbar").css("background-color", "#f6b32f")
-    $("#mainButton").css("background-color", '#ffcc67')
-    $("#mainButton").css("border-color", '#274e9a')
-})
-
-$('#homeThemeButton').on('click', function () {
-    theme = 'default'
-    $("body").css("background-color", 'white')
-    $(".rightTriangle").css("background-color", "#f6b32f")
-    $(".leftTriangle").css("background-color", "#f6b32f")
-    $(".navbar").css("background-color", "#274e9a")
-    $("#mainButton").css("background-color", '#274e9a')
-    $("#mainButton").css("border-color", '#f6b32f')
-})
-
 
 $(document).ready(function () {
-    $('#sideBarButton').on('click', function () {
+
+    $(".logo").css("display", "none")
+    setTimeout(function () {
+        $(".logo").css("display", "block")
+        $(".logo").addClass("animated jackInTheBox")
+    }, 100)
+
+
+    $('#themeButton').on('click', function () {
+        theme = 'reverse'
+        $(".list1").css({"background-color": "##274e9a", "color": "#f6b32f", 'border-color': "#f6b32f"})
+        $('body').css('background-color', 'white')
+        $(".rightTriangle").css("background-color", "#274e9a")
+        $(".leftTriangle").css("background-color", "#274e9a")
+        $(".navbar").css("background-color", "#f6b32f")
+        $("#mainButton").css("background-color", '#ffcc67')
+        $("#mainButton").css("border-color", '#274e9a')
+    })
+
+    $('#homeThemeButton').on('click', function () {
+        theme = 'default'
+        $(".list1").css({"background-color": "#f6b32f", "color": "#274e9a", 'border-color': "#274e9a"})
+        $("body").css("background-color", 'white')
+        $(".rightTriangle").css("background-color", "#f6b32f")
+        $(".leftTriangle").css("background-color", "#f6b32f")
+        $(".navbar").css("background-color", "#274e9a")
+        $("#mainButton").css("background-color", '#274e9a')
+        $("#mainButton").css("border-color", '#f6b32f')
+    })
+
+$('#sideBarButton').on('click', function () {
     $('#drop').toggleClass('active');
     $('#sideBarButton').toggleClass('sideBarButtonActive');
-});
+     });
+
 
 $('#subMenu').on("click", function(e){
     $(this).next('ul').toggle();
@@ -40,6 +51,7 @@ $('#subMenu').on("click", function(e){
       });
 
     document.getElementById("mainButton").addEventListener("click", function () {
+        $("#mainButton").stop();
         $(".rightTriangle").animate({
             width: "0px"
         }, 700)
