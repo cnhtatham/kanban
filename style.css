@@ -104,6 +104,7 @@
 }
 
 /* SIDE-BAR */
+
 .wrapper {
     position: absolute;
     align-items: stretch;
@@ -187,4 +188,68 @@ a:focus {
 
 #sidebar ul.components {
     border-bottom: 1px solid #47748b;
+}
+
+.list1 {
+    position: absolute;
+    left: 5%;
+    top: 35%;
+    border: 2px solid #1E6CBF;
+    width: 20%;
+    height: 10%;
+    background-color: #D8CEA8;
+    display: inline-block;
+}
+
+header {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.addBtn {
+    background-color: green;
+    font-size: 18px;
+    border-radius: 10%;
+    position: relative;
+    color: white;
+    padding: 1%;
+    left: -4%;
+    margin: 5px;
+    padding: 3px;
+}
+
+#myInput {
+    width: 100%;
+}
+
+ul {
+    margin-top: 2%;
+}
+
+ul {
+    margin-top: 2%;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.taskBtn {
+    position: absolute;
+    background: none;
+    width: 100%;
+    bottom: 0%;
+    left: 0%;
 }
