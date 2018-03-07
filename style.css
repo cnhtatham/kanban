@@ -102,14 +102,17 @@
     opacity: 0;
 }
 
+
 /* SIDE-BAR */
-.wrapper {
+.subNav {
     position: absolute;
     align-items: stretch;
     top: 6.5%;
     right: 1%;
     z-index: 9999;
 }
+
+
 
 .sideBtn {
     background: #337ab7;
@@ -121,6 +124,8 @@
     font-size: 24px;
     cursor: pointer;
     border-radius: 4px;
+    transition: all 0.3s;
+
 }
 
 .sideBtn:active:focus {
@@ -140,30 +145,52 @@
 
 .sideBtn:hover {
     box-shadow: 1px 1px 1px;
-    background-color: #f6b32f;
+    background-color: #274e9a ;
     color: #fff;
-    border: #f6b32f;
+    border: #274e9a;
 }
 
-.activeBtn {
+.sideBarButtonActive {
     outline: none;
     border: 1px solid #f6b32f;
     color: #fff;
     background-color: #f6b32f;
 }
 
-#sidebar {
+#drop {
+    display: none;
+}
+
+#drop.active {
+   /* visibility: hidden;*/
     transition: all 0.3s;
     min-width: 100px;
     max-width: 100px;
     min-height: 50px;
-    margin-left: -50px;
-    margin-top: -150px;
+    margin-left: 0px;
+    margin-top: 10px;
+    display: block;
 }
-
-#sidebar.active {
+/*
+#drop.active {
     margin-top: 10px;
     margin-bottom: 0px;
+    left: -200px;
+    position: absolute;
+    background-color: #47748b;
+    color: #fff;
+    visibility: visible;
+}
+*/
+
+.menu {
+    top: 0;
+    right: 0;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 50px;
+    margin-left: 0px;
+    margin-top: 10px;
 }
 
 a,
@@ -174,16 +201,16 @@ a:focus {
     transition: all 0.3s;
 }
 
-#sidebar ul li a {
+#drop ul li a {
     padding: 10px;
     font-size: 1.1em;
     display: block;
 }
 
-#sidebar ul li a:hover {
+#drop a:hover {
     background: #f6b32f;
 }
 
-#sidebar ul.components {
+#drop ul.components {
     border-bottom: 1px solid #47748b;
 }

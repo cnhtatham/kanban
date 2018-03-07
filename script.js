@@ -24,12 +24,16 @@ $('#homeThemeButton').on('click', function () {
 
 
 $(document).ready(function () {
+    $('#sideBarButton').on('click', function () {
+    $('#drop').toggleClass('active');
+    $('#sideBarButton').toggleClass('sideBarButtonActive');
+});
 
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-        $('#sidebarCollapse').toggleClass('activeBtn');
-
-    });
+$('#subMenu').on("click", function(e){
+    $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
 
     document.getElementById("mainButton").addEventListener("click", function () {
         $(".rightTriangle").animate({
