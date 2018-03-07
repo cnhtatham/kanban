@@ -266,6 +266,7 @@ ul {
     user-select: none;
     margin-bottom: 10px;
     word-wrap: break-word;
+    border-radius: 5px;
 }
 
 .taskBtn {
@@ -290,4 +291,7 @@ ul {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 0;
+    width: 90%;
+    position: relative;
+    left: 5%;
 }
