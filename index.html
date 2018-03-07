@@ -15,26 +15,34 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <button type="button" id="sidebarCollapse" class="sideBtn">
+    <div class="subNav">
+        <button type="button" id="sideBarButton" class="sideBtn">
             <i class="glyphicon glyphicon-align-left"></i>
         </button>
-        <div>
-            <nav id="sidebar">
+
+            <div id="drop">
                 <ul class="list-unstyled components">
                     <!-- Sidebar Links -->
                     <li class="active">
-                        <a href="#">Add</a>
+                        <a tabindex="-1" href="#">Add</a>
                     </li>
-                    <li>
-                        <a href="#">Settings</a>
+                    <li> <!-- first sub entry -->
+                        <a tabindex="-1" id="subMenu" href="#">Settings</a>
+                        <ul class="menu">
+                            <li><a tabindex="-1" href="#">LO</a></li>
+                            <li>
+                                <a tabindex="-1" id="subMenu" href="#">YO</a>
+                                <ul class="menu">
+                                    <li><a tabindex="-1" href="#">HELLO</a></li>
+                                    <li><a tabindex="-1" href="#">FOOL</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
                     </li>
                 </ul>
-            </nav>
-            <div class="settingList">
-
             </div>
-        </div>
+        
     </div>
 
     <div class="header">

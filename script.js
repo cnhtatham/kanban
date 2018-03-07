@@ -8,6 +8,7 @@ let theme = 'default'
 
 
 $(document).ready(function () {
+
     $(".logo").css("display", "none")
     setTimeout(function () {
         $(".logo").css("display", "block")
@@ -37,11 +38,17 @@ $(document).ready(function () {
         $("#mainButton").css("border-color", '#f6b32f')
     })
 
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-        $('#sidebarCollapse').toggleClass('activeBtn');
+$('#sideBarButton').on('click', function () {
+    $('#drop').toggleClass('active');
+    $('#sideBarButton').toggleClass('sideBarButtonActive');
+     });
 
-    });
+
+$('#subMenu').on("click", function(e){
+    $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
 
     document.getElementById("mainButton").addEventListener("click", function () {
         $("#mainButton").stop();
@@ -103,7 +110,6 @@ $(document).ready(function () {
         }, 2000)
     })
 
-    var list1Height = 10
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
 
@@ -116,12 +122,11 @@ $(document).ready(function () {
             alert("Enter something fool");
         } else {
             document.getElementById("items").appendChild(li);
-            list1Height += 8
             var list1 = $('#list1');
             curHeight = list1.height();
             autoHeight = list1.css('height', 'auto').height();
             list1.height(curHeight).animate({
-                height: autoHeight + 12
+                height: autoHeight + 15
             }, 500);
             setTimeout(function() {
                 $("li").animate({
