@@ -196,9 +196,11 @@ a:focus {
     left: 5%;
     height: 88px;
     top: 35%;
-    border: 2px solid #1E6CBF;
+    color: #1E6CBF;
+    border: 4px solid #1E6CBF;
+    border-radius: 10px; 
     width: 20%;
-    background-color: #D8CEA8;
+    background-color: #f6b32f;
     display: inline-block;
 }
 
@@ -219,11 +221,13 @@ ul {
 }
 
 ul li {
+    opacity: 0;
+    color: black;
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
     list-style-type: none;
-    background: #eee;
+    background: white;
     font-size: 18px;
     transition: 0.2s;
     /* make the list items unselectable */
@@ -238,9 +242,11 @@ ul li {
 .taskBtn {
     position: absolute;
     background: none;
-    width: 100%;
+    width: 40%;
     bottom: 0%;
-    left: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
 }
 
 .toDo {
