@@ -1,11 +1,12 @@
 .navbar {
     background-color: #274e9a;
+    height: 8%;
 }
 
 .logo {
-    left: 50%;
+    left: 44%;
     height: 120px;
-    top: -35px;
+    top: -46%;
     position: absolute;
     transform: translate(-50%, 0);
 }
