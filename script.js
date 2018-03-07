@@ -135,12 +135,17 @@ $(document).ready(function () {
             document.getElementById("items").appendChild(li);
             list1Height += 8
             var list1 = $('#list1');
-                curHeight = list1.height();
-                autoHeight = list1.css('height', 'auto').height();
+            curHeight = list1.height();
+            autoHeight = list1.css('height', 'auto').height();
             list1.height(curHeight).animate({
                 height: autoHeight + 12
             }, 500);
-            
+            setTimeout(function() {
+                $("li").animate({
+                    opacity: "1"
+                }, 200)
+            }, 500)
+
         }
 
         document.getElementById("myInput").value = "";
@@ -149,16 +154,20 @@ $(document).ready(function () {
         span.className = "close";
         span.appendChild(txt);
         li.appendChild(span);
-
         for (i = 0; i < close.length; i++) {
             close[i].onclick = function () {
                 var div = this.parentElement;
-                div.style.display = "none";
+                $(this.parentElement).animate({
+                    opacity: "0"
+                }, 200)
+                setTimeout(function() {
+                    div.style.display = "none";
                 curHeight = list1.height();
                 autoHeight = list1.css('height', 'auto').height();
-            list1.height(curHeight).animate({
-                height: autoHeight + 12
-            }, 500);
+                list1.height(curHeight).animate({
+                    height: autoHeight + 12
+                }, 500);
+                }, 200)
             }
         }
     })
