@@ -1,3 +1,5 @@
+let yahoo = document.getElementById("yahoo")
+let no = document.getElementById("no")
 let theme = 'default'
 
 $('#themebutton').on('click', function () {
@@ -53,7 +55,9 @@ $(document).ready(function () {
                 $('#imran_speech').animate({
                     opacity: '1'
                 })
+                no.play();
             }, 800)
+            yahoo.play();
         }, 800)
         setTimeout(function () {
             $("#mainButton").css("display", "none")
