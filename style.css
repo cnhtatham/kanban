@@ -226,7 +226,7 @@ a:focus {
     border: 4px solid #1E6CBF;
     border-radius: 10px; 
     width: 20%;
-    background-color: #f6b32f;
+    background-color: lightgrey;
     display: inline-block;
 }
 
