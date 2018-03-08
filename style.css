@@ -351,3 +351,13 @@ ul {
     position: relative;
     left: 5%;
 }
+
+#items>li:hover {
+    background: #ddd;
+}
+
+#items>li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
