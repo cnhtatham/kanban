@@ -141,44 +141,37 @@ $(document).ready(function () {
             }, 2000)
         }, 2000)
     })
+    let list1ItemCount = 0
+    var list1 = $('#list1')
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
         $('#myInput').focus();
-        console.log(true)
-    })
-
-
-    let list1ItemCount = 0
-
-    $(document).keypress(function (e) {
-        if (e.which == 13) {
-            $('#myInput').toggle();
-
-            var li = document.createElement("li");
-            var inputValue = document.getElementById("myInput").value;
-            var text = document.createTextNode(inputValue);
-            li.appendChild(text);
-            if (inputValue === '') {
-                alert("Enter something fool");
-            } else {
-                document.getElementById("items").appendChild(li);
-
-                list1ItemCount++
-                var list1 = $('#list1');
-                curHeight = list1.height();
-                autoHeight = list1.css('height', 'auto').height();
-                list1.height(curHeight).animate({
-                    height: autoHeight + 15
-                }, 500);
-                setTimeout(function () {
-                    $("li").animate({
-                        opacity: "1"
-                    }, 200)
-                }, 500)
-
+        //let input1focus = true
+        //if (input1focus == true) {
+        $(document).keypress(function (e) {
+            if (e.which == 13) {
+                var li = document.createElement("li");
+                var inputValue = document.getElementById("myInput").value;
+                var text = document.createTextNode(inputValue);
+                li.appendChild(text);
+                if (inputValue !== '') {
+                    document.getElementById("items").appendChild(li);
+                    document.getElementById("myInput").value = "";
+                    $('#myInput').toggle();
+                    list1ItemCount++
+                    curHeight = list1.height();
+                    autoHeight = list1.css('height', 'auto').height();
+                    list1.height(curHeight).animate({
+                        height: autoHeight + 15
+                    }, 500);
+                    setTimeout(function () {
+                        $("li").animate({
+                            opacity: "1"
+                        }, 200)
+                    }, 500)
+                }
             }
             var close = document.getElementsByClassName("close");
-            document.getElementById("myInput").value = "";
             var span = document.createElement("SPAN");
             var txt = document.createTextNode("\u00D7");
             span.className = "close";
@@ -207,13 +200,48 @@ $(document).ready(function () {
                             list1.height(curHeight).animate({
                                 height: autoHeight + 12
                             }, 500);
-                        }
-                    }, 200)
-                }
-            }
-        }
-    });
-})
+                        };
+                    }, 200);
+                };
+            };
+        })
+    })
+});
+/*
+var close = document.getElementsByClassName("close");
+document.getElementById("myInput").value = "";
+var span = document.createElement("SPAN");
+var txt = document.createTextNode("\u00D7");
+span.className = "close";
+span.appendChild(txt);
+//li.appendChild(span);
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+        list1ItemCount--
+        $('.list1').stop();
+        var div = this.parentElement;
+        $(this.parentElement).animate({
+            opacity: "0"
+        }, 200)
+        setTimeout(function () {
+            if (list1ItemCount == 0) {
+                div.style.display = "none";
+                curHeight = list1.height();
+                autoHeight = list1.css('height', 'auto').height();
+                list1.height(curHeight).animate({
+                    height: '75'
+                }, 500);
+            } else {
+                div.style.display = "none";
+                curHeight = list1.height();
+                autoHeight = list1.css('height', 'auto').height();
+                list1.height(curHeight).animate({
+                    height: autoHeight + 12
+                }, 500);
+            };
+        }, 200);
+    };
+};*/
 
 $('#mainButton').hover(function () {
     if (theme === 'default') {
