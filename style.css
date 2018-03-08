@@ -310,8 +310,8 @@ ul {
     color: white;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
-    padding-bottom: 28px;
-
+    padding-bottom: 23px;
+    padding-top: 3px;
 }
 
 .taskBtn:active:focus {
@@ -325,6 +325,12 @@ ul {
 }
 
 .taskBtn:active {
+    outline: none;
+    border: transparent;
+    background-color: #999999;
+}
+
+.taskBtn:hover {
     outline: none;
     border: transparent;
     background-color: #999999;
