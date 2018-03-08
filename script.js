@@ -145,6 +145,7 @@ $(document).ready(function () {
     var list1 = $('#list1')
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
+        $('.taskBtn').toggle();
         $('#myInput').focus();
         //let input1focus = true
         //if (input1focus == true) {
@@ -163,6 +164,7 @@ $(document).ready(function () {
                     li.appendChild(span);
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
+                    $('.taskBtn').toggle();
                     list1ItemCount++
                     curHeight = list1.height();
                     autoHeight = list1.css('height', 'auto').height();
