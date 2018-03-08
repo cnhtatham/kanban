@@ -1,7 +1,7 @@
-document.getElementById("list1").style.display = "none";
+document.getElementById("listOG").style.display = "none";
 document.getElementById("myInput").style.display = "none";
 
-var list1 = $('#list1');
+var listOG = $('#listOG');
 let yahoo = document.getElementById("yahoo")
 let no = document.getElementById("no")
 
@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     $('#themeButton').on('click', function () {
         theme = 'reverse'
-        $(".list1").css({
+        $(".listOG").css({
             "background-color": "##274e9a",
             "color": "#f6b32f",
             'border-color': "#f6b32f"
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     $('#homeThemeButton').on('click', function () {
         theme = 'default'
-        $(".list1").css({
+        $(".listOG").css({
             "background-color": "#f6b32f",
             "color": "#274e9a",
             'border-color': "#274e9a"
@@ -70,8 +70,8 @@ $(document).ready(function () {
         $(".leftTriangle").css("display", "none")
         $(".mainLogo").css("display", "none")
 
-        $(".list1").css("display", "block")
-        $(".list1").animate({
+        $(".listOG").css("display", "block")
+        $(".listOG").animate({
             opacity: "1"
         }, 100)
         $('body').animate({
@@ -113,8 +113,8 @@ $(document).ready(function () {
             $(".rightTriangle").css("display", "none")
             $(".leftTriangle").css("display", "none")
             $(".mainLogo").css("display", "none")
-            $(".list1").css("display", "block")
-            $(".list1").animate({
+            $(".listOG").css("display", "block")
+            $(".listOG").animate({
                 opacity: "1"
             }, 2000)
             $('body').animate({
@@ -141,8 +141,8 @@ $(document).ready(function () {
             }, 2000)
         }, 2000)
     })
-    let list1ItemCount = 0
-    var list1 = $('#list1')
+    let listOGItemCount = 0
+    var listOG = $('#listOG')
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
         $('.taskBtn').toggle();
@@ -165,10 +165,10 @@ $(document).ready(function () {
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
                     $('.taskBtn').toggle();
-                    list1ItemCount++
-                    curHeight = list1.height();
-                    autoHeight = list1.css('height', 'auto').height();
-                    list1.height(curHeight).animate({
+                    listOGItemCount++
+                    curHeight = listOG.height();
+                    autoHeight = listOG.css('height', 'auto').height();
+                    listOG.height(curHeight).animate({
                         height: autoHeight + 15
                     }, 500);
                     setTimeout(function () {
@@ -181,25 +181,25 @@ $(document).ready(function () {
             var close = document.getElementsByClassName("close");
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
-                    list1ItemCount--
-                    $('.list1').stop();
+                    listOGItemCount--
+                    $('.listOG').stop();
                     var div = this.parentElement;
                     $(this.parentElement).animate({
                         opacity: "0"
                     }, 200)
                     setTimeout(function () {
-                        if (list1ItemCount == 0) {
+                        if (listOGItemCount == 0) {
                             div.style.display = "none";
-                            curHeight = list1.height();
-                            autoHeight = list1.css('height', 'auto').height();
-                            list1.height(curHeight).animate({
+                            curHeight = listOG.height();
+                            autoHeight = listOG.css('height', 'auto').height();
+                            listOG.height(curHeight).animate({
                                 height: '75'
                             }, 500);
                         } else {
                             div.style.display = "none";
-                            curHeight = list1.height();
-                            autoHeight = list1.css('height', 'auto').height();
-                            list1.height(curHeight).animate({
+                            curHeight = listOG.height();
+                            autoHeight = listOG.css('height', 'auto').height();
+                            listOG.height(curHeight).animate({
                                 height: autoHeight + 12
                             }, 500);
                         };
@@ -209,49 +209,15 @@ $(document).ready(function () {
         })
     })
 });
-/*
-var close = document.getElementsByClassName("close");
-document.getElementById("myInput").value = "";
-var span = document.createElement("SPAN");
-var txt = document.createTextNode("\u00D7");
-span.className = "close";
-span.appendChild(txt);
-//li.appendChild(span);
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-        list1ItemCount--
-        $('.list1').stop();
-        var div = this.parentElement;
-        $(this.parentElement).animate({
-            opacity: "0"
-        }, 200)
-        setTimeout(function () {
-            if (list1ItemCount == 0) {
-                div.style.display = "none";
-                curHeight = list1.height();
-                autoHeight = list1.css('height', 'auto').height();
-                list1.height(curHeight).animate({
-                    height: '75'
-                }, 500);
-            } else {
-                div.style.display = "none";
-                curHeight = list1.height();
-                autoHeight = list1.css('height', 'auto').height();
-                list1.height(curHeight).animate({
-                    height: autoHeight + 12
-                }, 500);
-            };
-        }, 200);
-    };
-};*/
+
 
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('#items');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-    //ev.target.classList.addClass('ui-state-default');
-  }
+list.addEventListener('click', function (ev) {
+    if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+        //ev.target.classList.addClass('ui-state-default');
+    }
 }, false);
 
 $('#mainButton').hover(function () {
@@ -282,5 +248,4 @@ $('#mainButton').hover(function () {
             borderColor: '#274e9a',
         }, 300)
     }
-
 })
