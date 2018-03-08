@@ -140,14 +140,17 @@ $(document).ready(function () {
             }, 2000)
         }, 2000)
     })
+
+
     let listOGItemCount = 0
     var listOG = $('#listOG')
+
+    // CREATING LIST ITEMS >>>>>>>>>>>>>
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
         $('.taskBtn').toggle();
         $('#myInput').focus();
-        //let input1focus = true
-        //if (input1focus == true) {
+
         $(document).keypress(function (e) {
             if (e.which == 13) {
                 var li = document.createElement("li");
@@ -159,6 +162,7 @@ $(document).ready(function () {
                 li.appendChild(textSpan);
                 if (inputValue !== '') {
                     document.getElementById("items").appendChild(li);
+
                     var removeItem = document.createElement("i");
                     var infoItem = document.createElement("i");
                     removeItem.className = "glyphicon glyphicon-remove-sign";
@@ -181,6 +185,8 @@ $(document).ready(function () {
                     }, 500)
                 }
             }
+
+            // Click on a close button to hide the current list item
             var close = document.getElementsByClassName("close");
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
@@ -219,7 +225,6 @@ var list = document.querySelector('#items');
 list.addEventListener('click', function (ev) {
     if (ev.target.tagName === 'LI') {
         ev.target.classList.toggle('checked');
-        //ev.target.classList.addClass('ui-state-default');
     }
 }, false);
 
