@@ -145,6 +145,7 @@ $(document).ready(function () {
     var listOG = $('#listOG')
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
+        $('.taskBtn').toggle();
         $('#myInput').focus();
         //let input1focus = true
         //if (input1focus == true) {
@@ -163,6 +164,7 @@ $(document).ready(function () {
                     li.appendChild(span);
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
+                    $('.taskBtn').toggle();
                     listOGItemCount++
                     curHeight = listOG.height();
                     autoHeight = listOG.css('height', 'auto').height();
