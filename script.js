@@ -141,14 +141,17 @@ $(document).ready(function () {
             }, 2000)
         }, 2000)
     })
+
+
     let listOGItemCount = 0
     var listOG = $('#listOG')
+
+    // CREATING LIST ITEMS >>>>>>>>>>>>>
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
         $('.taskBtn').toggle();
         $('#myInput').focus();
-        //let input1focus = true
-        //if (input1focus == true) {
+
         $(document).keypress(function (e) {
             if (e.which == 13) {
                 var li = document.createElement("li");
@@ -157,11 +160,13 @@ $(document).ready(function () {
                 li.appendChild(text);
                 if (inputValue !== '') {
                     document.getElementById("items").appendChild(li);
-                    var span = document.createElement("SPAN");
-                    var txt = document.createTextNode("\u00D7");
-                    span.className = "close";
-                    span.appendChild(txt);
-                    li.appendChild(span);
+                    // Create a "close" button and append it to each list item
+                    var button = document.createElement("button");
+                    //var txt = document.createTextNode("\u00D7");
+                    button.innerHTML = "\u00D7"
+                    button.className = "close";
+                    //button.appendChild(txt);
+                    li.appendChild(button);
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
                     $('.taskBtn').toggle();
@@ -178,6 +183,8 @@ $(document).ready(function () {
                     }, 500)
                 }
             }
+
+            // Click on a close button to hide the current list item
             var close = document.getElementsByClassName("close");
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
@@ -216,7 +223,6 @@ var list = document.querySelector('#items');
 list.addEventListener('click', function (ev) {
     if (ev.target.tagName === 'LI') {
         ev.target.classList.toggle('checked');
-        //ev.target.classList.addClass('ui-state-default');
     }
 }, false);
 
