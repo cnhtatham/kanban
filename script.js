@@ -7,7 +7,6 @@ let no = document.getElementById("no")
 
 let theme = 'default'
 
-
 $(document).ready(function () {
 
     $(".logo").css("display", "none")
@@ -156,17 +155,20 @@ $(document).ready(function () {
             if (e.which == 13) {
                 var li = document.createElement("li");
                 var inputValue = document.getElementById("myInput").value;
+                var textSpan = document.createElement("SPAN")
+                textSpan.className = "textSpan"
                 var text = document.createTextNode(inputValue);
-                li.appendChild(text);
+                textSpan.appendChild(text)
+                li.appendChild(textSpan);
                 if (inputValue !== '') {
                     document.getElementById("items").appendChild(li);
-                    // Create a "close" button and append it to each list item
-                    var button = document.createElement("button");
-                    //var txt = document.createTextNode("\u00D7");
-                    button.innerHTML = "\u00D7"
-                    button.className = "close";
-                    //button.appendChild(txt);
-                    li.appendChild(button);
+
+                    var removeItem = document.createElement("i");
+                    var infoItem = document.createElement("i");
+                    removeItem.className = "glyphicon glyphicon-remove-sign";
+                    infoItem.className = "glyphicon glyphicon-info-sign";
+                    li.appendChild(removeItem);
+                    li.appendChild(infoItem);
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
                     $('.taskBtn').toggle();

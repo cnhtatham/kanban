@@ -263,7 +263,6 @@ ul {
     color: black;
     cursor: pointer;
     position: relative;
-    padding: 12px 8px 12px 10px;
     list-style-type: none;
     background: white;
     font-size: 18px;
@@ -277,6 +276,8 @@ ul {
     margin-bottom: 10px;
     word-wrap: break-word;
     border-radius: 5px;
+    padding: 0;
+    padding-top: 5px;
 }
 
 #myInput {
@@ -358,4 +359,14 @@ ul {
     background: #888;
     color: #fff;
     text-decoration: line-through;
+}
+
+.close {
+display: flex;
+justify-content: center;
+background: red;
+float: none;
+border-bottom-left-radius: 6px;
+border-bottom-right-radius: 6px;
+width: 100%;
 }
