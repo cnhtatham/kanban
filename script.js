@@ -59,6 +59,26 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
+    document.getElementById("skip").addEventListener("click", function () {
+        $("#imran").css("display", "none")
+        $("#stuart").css("display", "none")
+        $("#stuart_speech").css("display", "none")
+        $("#imran_speech").css("display", "none")
+        $(".startScreen").css("display", "none")
+        $("#mainButton").css("display", "none")
+        $(".rightTriangle").css("display", "none")
+        $(".leftTriangle").css("display", "none")
+        $(".mainLogo").css("display", "none")
+
+        $(".list1").css("display", "block")
+        $(".list1").animate({
+            opacity: "1"
+        }, 100)
+        $('body').animate({
+            backgroundColor: '#337ab7'
+        }, 100)
+    })
+
     document.getElementById("mainButton").addEventListener("click", function () {
         $("#mainButton").stop();
         $(".rightTriangle").animate({
