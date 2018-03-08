@@ -121,7 +121,7 @@ $(document).ready(function () {
             }, 2000)
         }, 2000)
     })
-    document.querySelector(".taskBtn").addEventListener('click', function() {
+    document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
     })
 
@@ -129,49 +129,50 @@ $(document).ready(function () {
         if (e.which == 13) {
             document.getElementById("myInput").style.display = "block";
 
-        var li = document.createElement("li");
-        var inputValue = document.getElementById("myInput").value;
-        var text = document.createTextNode(inputValue);
-        li.appendChild(text);
-        if (inputValue === '') {
-            alert("Enter something fool");
-        } else {
-            document.getElementById("items").appendChild(li);
-            var list1 = $('#list1');
-            curHeight = list1.height();
-            autoHeight = list1.css('height', 'auto').height();
-            list1.height(curHeight).animate({
-                height: autoHeight + 15
-            }, 500);
-            setTimeout(function () {
-                $("li").animate({
-                    opacity: "1"
-                }, 200)
-            }, 500)
-
-        }
-        var close = document.getElementsByClassName("close");
-        document.getElementById("myInput").value = "";
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        li.appendChild(span);
-        for (i = 0; i < close.length; i++) {
-            close[i].onclick = function () {
-                $('.list1').stop();
-                var div = this.parentElement;
-                $(this.parentElement).animate({
-                    opacity: "0"
-                }, 200)
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var text = document.createTextNode(inputValue);
+            li.appendChild(text);
+            if (inputValue === '') {
+                alert("Enter something fool");
+            } else {
+                document.getElementById("items").appendChild(li);
+                var list1 = $('#list1');
+                curHeight = list1.height();
+                autoHeight = list1.css('height', 'auto').height();
+                list1.height(curHeight).animate({
+                    height: autoHeight + 15
+                }, 500);
                 setTimeout(function () {
-                    div.style.display = "none";
-                    curHeight = list1.height();
-                    autoHeight = list1.css('height', 'auto').height();
-                    list1.height(curHeight).animate({
-                        height: autoHeight + 12
-                    }, 500);
-                }, 200)
+                    $("li").animate({
+                        opacity: "1"
+                    }, 200)
+                }, 500)
+
+            }
+            var close = document.getElementsByClassName("close");
+            document.getElementById("myInput").value = "";
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    $('.list1').stop();
+                    var div = this.parentElement;
+                    $(this.parentElement).animate({
+                        opacity: "0"
+                    }, 200)
+                    setTimeout(function () {
+                        div.style.display = "none";
+                        curHeight = list1.height();
+                        autoHeight = list1.css('height', 'auto').height();
+                        list1.height(curHeight).animate({
+                            height: autoHeight + 12
+                        }, 500);
+                    }, 200)
+                }
             }
         }
     });

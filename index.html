@@ -14,35 +14,33 @@
 </head>
 
 <body>
+    <!-- HEADER AND SUB_NAV -->
     <div class="subNav">
         <button type="button" id="sideBarButton" class="sideBtn">
             <i class="glyphicon glyphicon-align-left"></i>
         </button>
 
-            <div id="drop">
-                <ul class="list-unstyled components">
-                    <!-- Sidebar Links -->
-                    <li class="active">
-                        <a tabindex="-1" href="#">Add</a>
-                    </li>
-                    <li> <!-- first sub entry -->
-                        <a tabindex="-1" id="subMenu" href="#">Settings</a>
-                        <ul class="menu">
+            <div id="drop"> <!--drop_open-->
+                <ul class="list-unstyled components"> <!--1st_dropdown_open-->
+                    <li class="active"><a tabindex="-1" href="#">Add</a></li> <!--ADD board option-->
+                    <li> <!--expandable1_open-->
+                        <a tabindex="-1" id="subMenu" href="#">Settings</a> <!--drop_header-->
+                        <ul class="menu"> <!--2nd_dropdown_open-->
                             <li><a tabindex="-1" href="#">LO</a></li>
-                            <li>
-                                <a tabindex="-1" id="subMenu" href="#">YO</a>
-                                <ul class="menu">
+                            <li> <!--expandable2_open-->
+                                <a tabindex="-1" id="subMenu" href="#">YO</a> <!--drop_header-->
+                                
+                                <ul class="menu"> <!--3rd_dropdown_open-->
                                     <li><a tabindex="-1" href="#">HELLO</a></li>
                                     <li><a tabindex="-1" href="#">FOOL</a></li>
-                                </ul>
-                            </li>
-                            
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                                </ul> <!--3rd_dropdown_end-->
+                            </li> <!--expandable2_end-->
+                        </ul> <!--2nd_dropdown_end -->
+                    </li> <!--expandable1_end-->
+                </ul> <!--1st_dropdown_end-->
+            </div> <!--drop_end-->
         
-    </div>
+    </div> <!--subNav-end-->
 
     <div class="header">
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -56,8 +54,9 @@
                 </div>
             </div>
         </nav>
-    </div>
-    <!-- Image to fade out on board creation -->
+    </div><!--Header-end-->
+
+    <!-- MAIN HOME PAGE -->
     <div class="startScreen">
         <img class="mainLogo" src="img/logo.png" alt="">
         <button id="mainButton" type="button" class="btn btn-primary animated">ENTER</button>
@@ -70,7 +69,8 @@
         <audio src="audio/yahoo.mp3" id="yahoo"></audio>
         <audio src="audio/no.mp3" id="no"></audio>
     </div>
-
+    
+    <!-- KANBAN BOARD -->
     <div class="cont">
             <div class="list1" id="list1">
                 <div id="toDo" class="header">
