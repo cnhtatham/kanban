@@ -123,11 +123,16 @@ $(document).ready(function () {
     })
     document.querySelector(".taskBtn").addEventListener('click', function () {
         document.getElementById("myInput").style.display = "block";
+        $('#myInput').focus();
+        console.log(true)
     })
+
+
+    let list1ItemCount = 0
 
     $(document).keypress(function (e) {
         if (e.which == 13) {
-            document.getElementById("myInput").style.display = "block";
+            $('#myInput').toggle();
 
             var li = document.createElement("li");
             var inputValue = document.getElementById("myInput").value;
@@ -137,6 +142,8 @@ $(document).ready(function () {
                 alert("Enter something fool");
             } else {
                 document.getElementById("items").appendChild(li);
+
+                list1ItemCount++
                 var list1 = $('#list1');
                 curHeight = list1.height();
                 autoHeight = list1.css('height', 'auto').height();
@@ -159,18 +166,28 @@ $(document).ready(function () {
             li.appendChild(span);
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
+                    list1ItemCount--
                     $('.list1').stop();
                     var div = this.parentElement;
                     $(this.parentElement).animate({
                         opacity: "0"
                     }, 200)
                     setTimeout(function () {
-                        div.style.display = "none";
-                        curHeight = list1.height();
-                        autoHeight = list1.css('height', 'auto').height();
-                        list1.height(curHeight).animate({
-                            height: autoHeight + 12
-                        }, 500);
+                        if (list1ItemCount == 0) {
+                            div.style.display = "none";
+                            curHeight = list1.height();
+                            autoHeight = list1.css('height', 'auto').height();
+                            list1.height(curHeight).animate({
+                                height: '75'
+                            }, 500);
+                        } else {
+                            div.style.display = "none";
+                            curHeight = list1.height();
+                            autoHeight = list1.css('height', 'auto').height();
+                            list1.height(curHeight).animate({
+                                height: autoHeight + 12
+                            }, 500);
+                        }
                     }, 200)
                 }
             }
