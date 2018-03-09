@@ -238,7 +238,7 @@ a:focus {
     border-radius: 5px; 
     width: 200px;
     background-color: lightgrey;
-    display: inline-block;
+    display: block;
 }
 
 .title {
@@ -259,6 +259,7 @@ ul {
 }
 
 #items li {
+    /* height: auto; */
     opacity: 0;
     color: black;
     cursor: pointer;
@@ -350,10 +351,10 @@ ul {
     position: relative;
     left: 5%;
 }
-
+/* 
 #items>li:hover {
     background: #ddd;
-}
+} */
 
 #items>li.checked {
     background: #888;
@@ -361,7 +362,7 @@ ul {
     text-decoration: line-through;
 }
 
-.close {
+/* .close {
 display: flex;
 justify-content: center;
 background: red;
@@ -369,4 +370,23 @@ float: none;
 border-bottom-left-radius: 6px;
 border-bottom-right-radius: 6px;
 width: 100%;
+} */
+
+.cardIcons {
+    display: flex;
+    flex-direction: row;
+    left: 156px;
+    top: -2px;
+    padding: 2px;
+}
+
+.textSpan {
+    top: 10%;
+    left: 3%;
+    width: 80%;
+    background-color: lightblue;
+}
+
+.cards {
+    height: auto;
 }

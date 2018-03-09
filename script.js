@@ -2,6 +2,7 @@ document.getElementById("listOG").style.display = "none";
 document.getElementById("myInput").style.display = "none";
 
 var listOG = $('#listOG');
+var cardsCss = $('.cards');
 let yahoo = document.getElementById("yahoo")
 let no = document.getElementById("no")
 
@@ -160,21 +161,34 @@ $(document).ready(function () {
                 var text = document.createTextNode(inputValue);
                 textSpan.appendChild(text);
                 li.appendChild(textSpan);
-                li.className = "ui-state-default";
+
+                li.className = "cards ui-state-default";
                 if (inputValue !== '') {
                     document.getElementById("items").appendChild(li);
+                   var iSpan = document.createElement("SPAN");
                     var removeItem = document.createElement("i");
                     var infoItem = document.createElement("i");
                     var checkItem = document.createElement("i");
-                    removeItem.className = "fa fa-times";
-                    infoItem.className = "fas fa-ellipsis-h";
+                    removeItem.className = "fa fa-times cardIcons closeCard";
+                    infoItem.className = "fas fa-ellipsis-h cardIcons infoCard";
                     checkItem.className = "fas fa-check"
-                    li.appendChild(removeItem);
-                    li.appendChild(infoItem);
-                    li.appendChild(checkItem);
+                    iSpan.appendChild(removeItem);
+                    iSpan.appendChild(infoItem);
+                    iSpan.appendChild(checkItem);
+                    li.appendChild(iSpan);
+
+
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
                     $('.taskBtn').toggle();
+                    
+                    // // TRIED TO MAKE AN AUTO HEIGHT FOR THE CARDS --- NOT WORKING
+                    // curCardHeight = cardsCss.height();
+                    // autoCardHeight = cardsCss.css('height', 'auto').height();
+                    // cardsCss.height(curCardHeight).animate({
+                    //     height: autoCardHeight + 15
+                    // }, 500);
+
                     listOGItemCount++
                     curHeight = listOG.height();
                     autoHeight = listOG.css('height', 'auto').height();
