@@ -181,13 +181,6 @@ $(document).ready(function () {
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
                     $('.taskBtn').toggle();
-                    
-                    // // TRIED TO MAKE AN AUTO HEIGHT FOR THE CARDS --- NOT WORKING
-                    // curCardHeight = cardsCss.height();
-                    // autoCardHeight = cardsCss.css('height', 'auto').height();
-                    // cardsCss.height(curCardHeight).animate({
-                    //     height: autoCardHeight + 15
-                    // }, 500);
 
                     listOGItemCount++
                     curHeight = listOG.height();
