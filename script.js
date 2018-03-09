@@ -3,11 +3,11 @@ document.getElementById("myInput").style.display = "none";
 document.getElementById("titleInput").style.display = "none"
 
 var listOG = $('#listOG');
+var cardsCss = $('.cards');
 let yahoo = document.getElementById("yahoo")
 let no = document.getElementById("no")
 
 let theme = 'default'
-
 
 $(document).ready(function () {
 
@@ -147,88 +147,96 @@ $(document).ready(function () {
     })
 
 
-    let listOGItemCount = 0
+    var listOGItemCount = 0
     var listOG = $('#listOG')
 
     // CREATING LIST ITEMS >>>>>>>>>>>>>
     document.querySelector(".taskBtn").addEventListener('click', function () {
-        document.getElementById("myInput").style.display = "block";
-        $('.taskBtn').toggle();
-        $('#myInput').focus();
+            document.getElementById("myInput").style.display = "block";
+            $('.taskBtn').toggle();
+            $('#myInput').focus();
 
-        $(document).keypress(function (e) {
-            if (e.which == 13) {
-                var li = document.createElement("li");
-                var inputValue = document.getElementById("myInput").value;
-                var text = document.createTextNode(inputValue);
-                li.appendChild(text);
-                if (inputValue !== '') {
-                    document.getElementById("items").appendChild(li);
-                    // Create a "close" button and append it to each list item
-                    var button = document.createElement("button");
-                    //var txt = document.createTextNode("\u00D7");
-                    button.innerHTML = "\u00D7"
-                    button.className = "close";
-                    //button.appendChild(txt);
-                    li.appendChild(button);
-                    document.getElementById("myInput").value = "";
-                    $('#myInput').toggle();
-                    $('.taskBtn').toggle();
-                    listOGItemCount++
-                    curHeight = listOG.height();
-                    autoHeight = listOG.css('height', 'auto').height();
-                    listOG.height(curHeight).animate({
-                        height: autoHeight + 15
-                    }, 500);
-                    setTimeout(function () {
-                        $("li").animate({
-                            opacity: "1"
-                        }, 200)
-                    }, 500)
-                }
-            }
+            $(document).keypress(function (e) {
+                    if (e.which == 13) {
+                        var li = document.createElement("li");
+                        var inputValue = document.getElementById("myInput").value;
+                        var textSpan = document.createElement("SPAN");
+                        textSpan.className = "textSpan";
+                        var text = document.createTextNode(inputValue);
+                        textSpan.appendChild(text);
+                        li.appendChild(textSpan);
 
-            // Click on a close button to hide the current list item
-            var close = document.getElementsByClassName("close");
-            for (i = 0; i < close.length; i++) {
-                close[i].onclick = function () {
-                    listOGItemCount--
-                    $('.listOG').stop();
-                    var div = this.parentElement;
-                    $(this.parentElement).animate({
-                        opacity: "0"
-                    }, 200)
-                    setTimeout(function () {
-                        if (listOGItemCount == 0) {
-                            div.style.display = "none";
+                        li.className = "cards ui-state-default";
+                        if (inputValue !== '') {
+                            document.getElementById("items").appendChild(li);
+                            var iSpan = document.createElement("SPAN");
+                            var removeItem = document.createElement("i");
+                            var infoItem = document.createElement("i");
+                            var checkItem = document.createElement("i");
+                            removeItem.className = "fa fa-times cardIcons closeCard";
+                            infoItem.className = "fas fa-ellipsis-h cardIcons infoCard";
+                            checkItem.className = "fas fa-check cardIcons checkCard"
+                            iSpan.appendChild(removeItem);
+                            iSpan.appendChild(infoItem);
+                            iSpan.appendChild(checkItem);
+                            li.appendChild(iSpan);
+
+
+                            document.getElementById("myInput").value = "";
+                            $('#myInput').toggle();
+                            $('.taskBtn').toggle();
+
+                            listOGItemCount++
                             curHeight = listOG.height();
                             autoHeight = listOG.css('height', 'auto').height();
                             listOG.height(curHeight).animate({
-                                height: '75'
+                                height: autoHeight + 15
                             }, 500);
-                        } else {
-                            div.style.display = "none";
-                            curHeight = listOG.height();
-                            autoHeight = listOG.css('height', 'auto').height();
-                            listOG.height(curHeight).animate({
-                                height: autoHeight + 12
-                            }, 500);
+                            setTimeout(function () {
+                                $("li").animate({
+                                    opacity: "1"
+                                }, 200)
+                            }, 500)
+                        }
+                    }
+                    // Click on a close button to hide the current list item
+                    var close = document.getElementsByClassName("closeCard");
+                    for (i = 0; i < close.length; i++) {
+                        close[i].onclick = function () {
+                            listOGItemCount--
+                            $('.listOG').stop();
+                            $(this).parent().parent().fadeOut(1300, function () {
+                                $(this).remove();
+                            });
+                            setTimeout(function () {
+                                curHeight = listOG.height();
+                                autoHeight = listOG.css('height', 'auto').height();
+                                if (listOGItemCount == 0) {
+                                    listOG.height(curHeight).animate({
+                                        height: '75'
+                                    }, 500);
+                                } else {
+                                    listOG.height(curHeight).animate({
+                                        height: autoHeight + 12
+                                    }, 500);
+                                };
+                            }, 1300);
                         };
-                    }, 200);
-                };
-            };
-        })
-    })
+                    };
+                    var check = document.getElementsByClassName("checkCard")
+                    for (j = 0; j < check.length; j++)
+                        check[j].onclick = function () {
+                            $(this).parent().parent().toggleClass('checked')
+                        }
+                }
+            )
+    });
+
+$(function () {
+    $("#items, #sortable2").sortable({
+        connectWith: ".connectedSortable"
+    }).disableSelection();
 });
-
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('#items');
-list.addEventListener('click', function (ev) {
-    if (ev.target.tagName === 'LI') {
-        ev.target.classList.toggle('checked');
-    }
-}, false);
 
 $('#mainButton').hover(function () {
     if (theme === 'default') {
@@ -259,6 +267,7 @@ $('#mainButton').hover(function () {
         }, 300)
     }
 })
+
 
 
 var listNumber = 1
@@ -314,3 +323,6 @@ document.getElementById("AddList").addEventListener("click", function(){
 
     
 })
+
+
+

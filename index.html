@@ -10,7 +10,7 @@
         crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <title>{kanBan}</title>
 </head>
 
@@ -28,7 +28,7 @@
                         <a tabindex="-1" id="subMenu" href="#">Settings</a> <!--drop_header-->
                         <ul class="menu"> <!--2nd_dropdown_open-->
                             <li><a tabindex="-1" href="#">LO</a></li>
-                            <li> <!--expandable2_open-->
+                            <li> <!--expandable2_open-->  
                                 <a tabindex="-1" id="subMenu" href="#">YO</a> <!--drop_header-->
                                 
                                 <ul class="menu"> <!--3rd_dropdown_open-->
@@ -83,7 +83,7 @@
                     <button class="taskBtn" id="taskId">Add new task ...</button>
                     <input type="text" id="myInput" placeholder="Enter...">
                 </div>
-                <ul id="items">
+                <ul id="items" class="connectedSortable">
                 </ul>
             </div>
     </div>
@@ -99,6 +99,10 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- REACT JS SCRIPT TAGS -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
     <script src="script.js"></script>
 </body>
 

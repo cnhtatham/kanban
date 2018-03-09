@@ -240,7 +240,7 @@ a:focus {
     border-radius: 5px;
     width: 200px;
     background-color: lightgrey;
-    display: inline-block;
+    display: block;
 }
 
 /* List Styles */
@@ -308,6 +308,7 @@ a:focus {
     padding-top: 3px;
 }
 
+
 #titleInput{
     position: absolute;
     width: 90%;
@@ -321,16 +322,17 @@ a:focus {
 
 
 
+
 ul {
     margin-top: 2%;
 }
 
 #items li {
+    /* height: auto; */
     opacity: 0;
     color: black;
     cursor: pointer;
     position: relative;
-    padding: 12px 8px 12px 10px;
     list-style-type: none;
     background: white;
     font-size: 18px;
@@ -344,6 +346,8 @@ ul {
     margin-bottom: 10px;
     word-wrap: break-word;
     border-radius: 5px;
+    padding: 0;
+    padding-top: 5px;
 }
 
 #myInput {
@@ -416,9 +420,40 @@ ul {
     position: relative;
     left: 5%;
 }
-
+/* 
 #items>li:hover {
     background: #ddd;
+} */
+
+
+
+/* .close {
+display: flex;
+justify-content: center;
+background: red;
+float: none;
+border-bottom-left-radius: 6px;
+border-bottom-right-radius: 6px;
+width: 100%;
+} */
+
+.cardIcons {
+    display: flex;
+    flex-direction: row;
+    left: 156px;
+    top: -2px;
+    padding: 2px;
+}
+
+.textSpan {
+    top: 10%;
+    left: 3%;
+    width: 80%;
+    background-color: lightblue;
+}
+
+.cards {
+    height: auto;
 }
 
 #items>li.checked {
