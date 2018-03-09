@@ -143,7 +143,7 @@ $(document).ready(function () {
     })
 
 
-    let listOGItemCount = 0
+    var listOGItemCount = 0
     var listOG = $('#listOG')
 
     // CREATING LIST ITEMS >>>>>>>>>>>>>
@@ -165,7 +165,7 @@ $(document).ready(function () {
                 li.className = "cards ui-state-default";
                 if (inputValue !== '') {
                     document.getElementById("items").appendChild(li);
-                   var iSpan = document.createElement("SPAN");
+                    var iSpan = document.createElement("SPAN");
                     var removeItem = document.createElement("i");
                     var infoItem = document.createElement("i");
                     var checkItem = document.createElement("i");
@@ -181,13 +181,6 @@ $(document).ready(function () {
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
                     $('.taskBtn').toggle();
-                    
-                    // // TRIED TO MAKE AN AUTO HEIGHT FOR THE CARDS --- NOT WORKING
-                    // curCardHeight = cardsCss.height();
-                    // autoCardHeight = cardsCss.css('height', 'auto').height();
-                    // cardsCss.height(curCardHeight).animate({
-                    //     height: autoCardHeight + 15
-                    // }, 500);
 
                     listOGItemCount++
                     curHeight = listOG.height();
@@ -203,32 +196,27 @@ $(document).ready(function () {
                 }
             }
             // Click on a close button to hide the current list item
-            var close = document.getElementsByClassName("fa-times");
+            var close = document.getElementsByClassName("closeCard");
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
                     listOGItemCount--
                     $('.listOG').stop();
-                    var div = this.parentElement;
-                    $(this.parentElement).animate({
-                        opacity: "0"
-                    }, 200)
+                    $(this).parent().parent().fadeOut(1300, function() {
+                        $(this).remove();
+                    });
                     setTimeout(function () {
+                        curHeight = listOG.height();
+                        autoHeight = listOG.css('height', 'auto').height();
                         if (listOGItemCount == 0) {
-                            div.style.display = "none";
-                            curHeight = listOG.height();
-                            autoHeight = listOG.css('height', 'auto').height();
                             listOG.height(curHeight).animate({
                                 height: '75'
                             }, 500);
                         } else {
-                            div.style.display = "none";
-                            curHeight = listOG.height();
-                            autoHeight = listOG.css('height', 'auto').height();
                             listOG.height(curHeight).animate({
                                 height: autoHeight + 12
                             }, 500);
                         };
-                    }, 200);
+                    }, 1300);
                 };
             };
         })
