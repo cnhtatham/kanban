@@ -2,6 +2,7 @@ document.getElementById("listOG").style.display = "none";
 document.getElementById("myInput").style.display = "none";
 
 var listOG = $('#listOG');
+var cardsCss = $('.cards');
 let yahoo = document.getElementById("yahoo")
 let no = document.getElementById("no")
 
@@ -160,18 +161,28 @@ $(document).ready(function () {
                 var text = document.createTextNode(inputValue);
                 textSpan.appendChild(text)
                 li.appendChild(textSpan);
+                li.className = "cards";
                 if (inputValue !== '') {
                     document.getElementById("items").appendChild(li);
-
+                    var iSpan = document.createElement("SPAN");
                     var removeItem = document.createElement("i");
                     var infoItem = document.createElement("i");
-                    removeItem.className = "glyphicon glyphicon-remove-sign";
-                    infoItem.className = "glyphicon glyphicon-info-sign";
-                    li.appendChild(removeItem);
-                    li.appendChild(infoItem);
+                    removeItem.className = "glyphicon glyphicon-remove-sign cardIcons closeCard";
+                    infoItem.className = "glyphicon glyphicon-info-sign cardIcons infoCard";
+                    iSpan.appendChild(removeItem);
+                    iSpan.appendChild(infoItem);
+                    li.appendChild(iSpan);
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
                     $('.taskBtn').toggle();
+                    
+                    // // TRIED TO MAKE AN AUTO HEIGHT FOR THE CARDS --- NOT WORKING
+                    // curCardHeight = cardsCss.height();
+                    // autoCardHeight = cardsCss.css('height', 'auto').height();
+                    // cardsCss.height(curCardHeight).animate({
+                    //     height: autoCardHeight + 15
+                    // }, 500);
+
                     listOGItemCount++
                     curHeight = listOG.height();
                     autoHeight = listOG.css('height', 'auto').height();
