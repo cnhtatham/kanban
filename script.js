@@ -1,5 +1,6 @@
 document.getElementById("listOG").style.display = "none";
 document.getElementById("myInput").style.display = "none";
+document.getElementById("titleInput").style.display = "none"
 
 var listOG = $('#listOG');
 let yahoo = document.getElementById("yahoo")
@@ -132,6 +133,9 @@ $(document).ready(function () {
             $("#stuart_speech").animate({
                 opacity: "0"
             }, 2000)
+            $(".List").animate({
+                opacity: "1"
+            }, 2000)
             setTimeout(function () {
                 $("#imran").css("display", "none")
                 $("#stuart").css("display", "none")
@@ -254,4 +258,59 @@ $('#mainButton').hover(function () {
             borderColor: '#274e9a',
         }, 300)
     }
+})
+
+
+var listNumber = 1
+var width = 0
+var addListClick = true
+
+
+document.getElementById("AddList").addEventListener("click", function(){
+    
+    document.getElementById("titleInput").style.display = "block";
+    $('#AddList').toggle();
+    $('#titleInput').focus();
+    addListClick = true
+    console.log(addListClick)
+    
+
+    $(document).keypress(function (e) {
+            var listTitle = document.getElementById("titleInput").value;
+            if (e.which == 13 && addListClick) {
+
+            
+            $('<div class="List'+(listNumber+1)+' List"></div>').insertAfter(".List"+listNumber);
+            $("#AddList").appendTo(".List"+(listNumber+1));
+            $("#titleInput").appendTo(".List"+(listNumber+1));
+
+
+
+            $('.List'+(listNumber)).html('<div id="toDo'+listNumber+'"class="header"></div>')
+            $('<ul id="items"></ul>').insertAfter("#toDo"+listNumber)
+
+            $("#toDo"+listNumber).html('<header class="title'+listNumber+'">'+listTitle+'</header>')
+            $('<button class="taskBtn'+listNumber+'" id="taskId'+listNumber+'">Add new task...</button>').insertAfter(".title"+listNumber)   
+            $('<input type="text" id="myInput'+listNumber+'" placeholder="Enter...">').insertAfter("#taskId"+listNumber) 
+
+
+            width = (250 * listNumber) + 30
+            listNumber++
+
+            $(".List"+listNumber).offset({top:95,left:width})
+
+            $(".List"+listNumber).animate({
+                opacity: "1"
+            }, 300)
+
+            $('#AddList').toggle();
+            $('#titleInput').toggle();
+
+            console.log(listNumber)
+            addListClick = false
+            console.log(addListClick)
+        }
+    })
+
+    
 })
