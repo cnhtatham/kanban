@@ -155,20 +155,23 @@ $(document).ready(function () {
             if (e.which == 13) {
                 var li = document.createElement("li");
                 var inputValue = document.getElementById("myInput").value;
-                var textSpan = document.createElement("SPAN")
-                textSpan.className = "textSpan"
+                var textSpan = document.createElement("SPAN");
+                textSpan.className = "textSpan";
                 var text = document.createTextNode(inputValue);
-                textSpan.appendChild(text)
+                textSpan.appendChild(text);
                 li.appendChild(textSpan);
+                li.className = "ui-state-default";
                 if (inputValue !== '') {
                     document.getElementById("items").appendChild(li);
-
                     var removeItem = document.createElement("i");
                     var infoItem = document.createElement("i");
-                    removeItem.className = "glyphicon glyphicon-remove-sign";
-                    infoItem.className = "glyphicon glyphicon-info-sign";
+                    var checkItem = document.createElement("i");
+                    removeItem.className = "fa fa-times";
+                    infoItem.className = "fas fa-ellipsis-h";
+                    checkItem.className = "fas fa-check"
                     li.appendChild(removeItem);
                     li.appendChild(infoItem);
+                    li.appendChild(checkItem);
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
                     $('.taskBtn').toggle();
@@ -185,9 +188,8 @@ $(document).ready(function () {
                     }, 500)
                 }
             }
-
             // Click on a close button to hide the current list item
-            var close = document.getElementsByClassName("glyphicon-remove-sign");
+            var close = document.getElementsByClassName("fa-times");
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
                     listOGItemCount--
@@ -219,11 +221,16 @@ $(document).ready(function () {
     })
 });
 
+$(function () {
+    $("#items, #sortable2").sortable({
+        connectWith: ".connectedSortable"
+    }).disableSelection();
+});
 
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('#items');
 list.addEventListener('click', function (ev) {
-    if (ev.target.tagName === 'LI') {
+    if (ev.target.tagName === 'LI' || ev.target.tagName === 'SPAN') {
         ev.target.classList.toggle('checked');
     }
 }, false);
