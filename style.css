@@ -356,11 +356,7 @@ ul {
     background: #ddd;
 } */
 
-#items>li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-}
+
 
 /* .close {
 display: flex;
@@ -389,4 +385,10 @@ width: 100%;
 
 .cards {
     height: auto;
+}
+
+#items>li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
 }
