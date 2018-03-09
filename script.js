@@ -187,7 +187,7 @@ $(document).ready(function () {
             }
 
             // Click on a close button to hide the current list item
-            var close = document.getElementsByClassName("close");
+            var close = document.getElementsByClassName("glyphicon-remove-sign");
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
                     listOGItemCount--
