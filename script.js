@@ -312,7 +312,7 @@ $(document).ready(function () {
                 $('<button class="taskBtn' + listNumber + '" id="taskId' + listNumber + '">Add new task...</button>').insertAfter(".title" + listNumber)
                 $('.taskBtn' + listNumber).toggleClass('taskBtn');
                 $('<input type="text" id="myInput' + listNumber + '" placeholder="Enter...">').insertAfter("#taskId" + listNumber);
-                $('#myInput' + listNumber).attr('id', 'myInput myInput' + listNumber);
+                $('#myInput' + listNumber).addClass('myInput')
                 $('#myInput' + listNumber).css('opacity', '0');
 
 
