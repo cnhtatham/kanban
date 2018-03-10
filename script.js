@@ -331,15 +331,21 @@ $(document).ready(function () {
 
                 $('#AddList').toggle();
                 $('#titleInput').toggle();
-                
 
-                console.log(listNumber)
+
                 addListClick = false
-                console.log(addListClick)
+            }
+            for (l = 1; l <= listNumber; l++) {
+                $('#taskId' + l).click(function () {
+                    console.log(true)
+                })
             }
         })
 
 
     })
+
+
+
 
 })
