@@ -375,10 +375,11 @@ $(document).ready(function () {
                                 }, 500)
                             }
                         }
-                        var close = document.getElementsByClassName("closeCard");
+                        var close = document.getElementsByClassName("infoCard");
                         for (i = 0; i < close.length; i++) {
                             close[i].onclick = function () {
                                 var list = this.parentElement.parentElement.parentElement.parentElement
+                                $(list).stop()
                                 //$('.listOG').stop();
                                 $(this).parent().parent().fadeOut(1300, function () {
                                     $(this).remove();
