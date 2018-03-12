@@ -476,4 +476,19 @@ span > .cardIcons:hover {
 }
 
 
+.popMenu {
+    background-color: #f6b32f;
+    position: relative;
+    top: 120px;
+    left: 5px;
+    height: 40px;
+    width: 34px;
+}
 
+.popMenuContent {
+    list-style-type: none;
+    color: #fff;
+    position: absolute;
+    left: -30px;
+    text-align: center;
+}
