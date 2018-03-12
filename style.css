@@ -328,6 +328,16 @@ ul {
     margin-top: 2%;
 }
 
+#items {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    width: 90%;
+    position: relative;
+    left: 5%;
+}
 #items li {
     /* height: auto; */
     opacity: 0;
@@ -344,11 +354,12 @@ ul {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
     margin-bottom: 10px;
     word-wrap: break-word;
     border-radius: 5px;
-    padding: 0;
-    padding-top: 5px;
+
+
 }
 
 #myInput {
@@ -411,16 +422,6 @@ ul {
     clear: both;
 }
 
-#items {
-    display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 0;
-    width: 90%;
-    position: relative;
-    left: 5%;
-}
 /* 
 #items>li:hover {
     background: #ddd;
@@ -438,28 +439,42 @@ border-bottom-right-radius: 6px;
 width: 100%;
 } */
 
-.cardIcons {
+.cards {
+    height: auto;
+    padding: 0px;
     display: flex;
-    flex-direction: row;
-    left: 156px;
-    top: -2px;
-    padding: 2px;
+    justify-content: space-around;
+    padding: 0;
+
+}
+
+span > .cardIcons {
+    padding-right: 3px;
+    text-align: center;
+    font-size: 16px;
+    color: #888;
 }
 
 .textSpan {
-    top: 10%;
-    left: 3%;
-    width: 80%;
-    background-color: lightblue;
+    display: table-cell;
+    width: 82%;
+    /* background-color: lightblue; */
+    font-size: 16px;
+    padding: 5px;
 }
 
-.cards {
-    height: auto;
-}
+
 
 #items>li.checked {
     background: #888;
     color: #fff;
     text-decoration: line-through;
 }
+
+.iSpan {
+    display: flex;
+    flex-direction: column;
+}
+
+
 

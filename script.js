@@ -182,12 +182,13 @@ $(document).ready(function () {
                     var removeItem = document.createElement("i");
                     var infoItem = document.createElement("i");
                     var checkItem = document.createElement("i");
-                    removeItem.className = "fa fa-times cardIcons closeCard";
-                    infoItem.className = "fas fa-ellipsis-h cardIcons infoCard";
-                    checkItem.className = "fas fa-check cardIcons checkCard"
-                    iSpan.appendChild(removeItem);
-                    iSpan.appendChild(infoItem);
+                    removeItem.className = "cardIcons fa fa-times  closeCard";
+                    infoItem.className = "cardIcons fas fa-ellipsis-h  infoCard";
+                    checkItem.className = "cardIcons fas fa-check  checkCard";
+                    iSpan.className = "iSpan";
                     iSpan.appendChild(checkItem);
+                    iSpan.appendChild(infoItem);
+                    // iSpan.appendChild(removeItem);
                     li.appendChild(iSpan);
 
                     document.getElementById("myInput").value = "";
