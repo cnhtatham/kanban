@@ -224,8 +224,23 @@ a:focus {
 
 /* KANBAN BOARD */
 
+.cont {
+    font-family: 'gilroy', Courier, monospace;
+}
 .ListContainer {
     font-family: 'gilroy', Courier, monospace;
+}
+
+.listOG {
+    opacity: 0;
+    position: absolute;
+    left: 2%;
+    height: 66px;
+    top: 25%;
+    border-radius: 5px;
+    width: 200px;
+    background-color: lightgrey;
+    display: block;
 }
 
 /* List Styles */
@@ -362,7 +377,7 @@ ul {
     left: 50%;
     transform: translateX(-50%);
     bottom: -3%;
-    height: 23px;
+    height: 66px;
 }
 
 .taskBtn {
