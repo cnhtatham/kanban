@@ -1,5 +1,5 @@
-document.getElementById("listOG").style.display = "none";
-document.getElementById("myInput").style.display = "none";
+//document.getElementById("listOG").style.display = "none";
+//document.getElementById("myInput").style.display = "none";
 document.getElementById("titleInput").style.display = "none"
 $('.List').css('display', 'none')
 
@@ -157,87 +157,87 @@ $(document).ready(function () {
         }, 2000)
     })
 
-    var listOGItemCount = 0
-    var listOG = $('#listOG')
+    // var listOGItemCount = 0
+    // var listOG = $('#listOG')
 
-    // CREATING LIST ITEMS >>>>>>>>>>>>>
-    document.querySelector(".taskBtn").addEventListener('click', function () {
-        document.getElementById("myInput").style.display = "block";
-        $('.taskBtn').toggle();
-        $('#myInput').focus();
+    // // CREATING LIST ITEMS >>>>>>>>>>>>>
+    // document.querySelector(".taskBtn").addEventListener('click', function () {
+    //     document.getElementById("myInput").style.display = "block";
+    //     $('.taskBtn').toggle();
+    //     $('#myInput').focus();
 
-        $(document).keypress(function (e) {
-            if (e.which == 13) {
-                var li = document.createElement("li");
-                var inputValue = document.getElementById("myInput").value;
-                var textSpan = document.createElement("SPAN");
-                textSpan.className = "textSpan";
-                var text = document.createTextNode(inputValue);
-                textSpan.appendChild(text);
-                li.appendChild(textSpan);
-                li.className = "cards ui-state-default";
-                if (inputValue !== '') {
-                    document.getElementById("items").appendChild(li);
-                    var iSpan = document.createElement("SPAN");
-                    var removeItem = document.createElement("i");
-                    var infoItem = document.createElement("i");
-                    var checkItem = document.createElement("i");
-                    removeItem.className = "fa fa-times cardIcons closeCard";
-                    infoItem.className = "fas fa-ellipsis-h cardIcons infoCard";
-                    checkItem.className = "fas fa-check cardIcons checkCard"
-                    iSpan.appendChild(removeItem);
-                    iSpan.appendChild(infoItem);
-                    iSpan.appendChild(checkItem);
-                    li.appendChild(iSpan);
+    //     $(document).keypress(function (e) {
+    //         if (e.which == 13) {
+    //             var li = document.createElement("li");
+    //             var inputValue = document.getElementById("myInput").value;
+    //             var textSpan = document.createElement("SPAN");
+    //             textSpan.className = "textSpan";
+    //             var text = document.createTextNode(inputValue);
+    //             textSpan.appendChild(text);
+    //             li.appendChild(textSpan);
+    //             li.className = "cards ui-state-default";
+    //             if (inputValue !== '') {
+    //                 document.getElementById("items").appendChild(li);
+    //                 var iSpan = document.createElement("SPAN");
+    //                 var removeItem = document.createElement("i");
+    //                 var infoItem = document.createElement("i");
+    //                 var checkItem = document.createElement("i");
+    //                 removeItem.className = "fa fa-times cardIcons closeCard";
+    //                 infoItem.className = "fas fa-ellipsis-h cardIcons infoCard";
+    //                 checkItem.className = "fas fa-check cardIcons checkCard"
+    //                 iSpan.appendChild(removeItem);
+    //                 iSpan.appendChild(infoItem);
+    //                 iSpan.appendChild(checkItem);
+    //                 li.appendChild(iSpan);
 
-                    document.getElementById("myInput").value = "";
-                    $('#myInput').toggle();
-                    $('.taskBtn').toggle();
+    //                 document.getElementById("myInput").value = "";
+    //                 $('#myInput').toggle();
+    //                 $('.taskBtn').toggle();
 
-                    listOGItemCount++
-                    curHeight = listOG.height();
-                    autoHeight = listOG.css('height', 'auto').height();
-                    listOG.height(curHeight).animate({
-                        height: autoHeight + 15
-                    }, 500);
-                    setTimeout(function () {
-                        $("li").animate({
-                            opacity: "1"
-                        }, 200)
-                    }, 500)
-                }
-            }
-            // Click on a close button to hide the current list item
-            var close = document.getElementsByClassName("closeCard");
-            for (i = 0; i < close.length; i++) {
-                close[i].onclick = function () {
-                    listOGItemCount--
-                    $('.listOG').stop();
-                    $(this).parent().parent().fadeOut(1300, function () {
-                        $(this).remove();
-                    });
-                    setTimeout(function () {
-                        curHeight = listOG.height();
-                        autoHeight = listOG.css('height', 'auto').height();
-                        if (listOGItemCount == 0) {
-                            listOG.height(curHeight).animate({
-                                height: '75'
-                            }, 500);
-                        } else {
-                            listOG.height(curHeight).animate({
-                                height: autoHeight + 12
-                            }, 500);
-                        };
-                    }, 1300);
-                };
-            };
-            var check = document.getElementsByClassName("checkCard")
-            for (j = 0; j < check.length; j++)
-                check[j].onclick = function () {
-                    $(this).parent().parent().toggleClass('checked')
-                }
-        })
-    });
+    //                 listOGItemCount++
+    //                 curHeight = listOG.height();
+    //                 autoHeight = listOG.css('height', 'auto').height();
+    //                 listOG.height(curHeight).animate({
+    //                     height: autoHeight + 15
+    //                 }, 500);
+    //                 setTimeout(function () {
+    //                     $("li").animate({
+    //                         opacity: "1"
+    //                     }, 200)
+    //                 }, 500)
+    //             }
+    //         }
+    //         // Click on a close button to hide the current list item
+    //         var close = document.getElementsByClassName("closeCard");
+    //         for (i = 0; i < close.length; i++) {
+    //             close[i].onclick = function () {
+    //                 listOGItemCount--
+    //                 $('.listOG').stop();
+    //                 $(this).parent().parent().fadeOut(1300, function () {
+    //                     $(this).remove();
+    //                 });
+    //                 setTimeout(function () {
+    //                     curHeight = listOG.height();
+    //                     autoHeight = listOG.css('height', 'auto').height();
+    //                     if (listOGItemCount == 0) {
+    //                         listOG.height(curHeight).animate({
+    //                             height: '75'
+    //                         }, 500);
+    //                     } else {
+    //                         listOG.height(curHeight).animate({
+    //                             height: autoHeight + 12
+    //                         }, 500);
+    //                     };
+    //                 }, 1300);
+    //             };
+    //         };
+    //         var check = document.getElementsByClassName("checkCard")
+    //         for (j = 0; j < check.length; j++)
+    //             check[j].onclick = function () {
+    //                 $(this).parent().parent().toggleClass('checked')
+    //             }
+    //     })
+    // });
 
     $(function () {
         $("#items, #sortable2").sortable({
@@ -371,6 +371,23 @@ $(document).ready(function () {
                                         opacity: "1"
                                     }, 200)
                                 }, 500)
+                            }
+                        }
+                        var close = document.getElementsByClassName("closeCard");
+                        for (i = 0; i < close.length; i++) {
+                            close[i].onclick = function () {
+                                var list = this.parentElement.parentElement.parentElement.parentElement
+                                //$('.listOG').stop();
+                                $(this).parent().parent().fadeOut(1300, function () {
+                                    $(this).remove();
+                                });
+                                setTimeout(function () {
+                                    curHeight = $(list).height();
+                                    autoHeight = $(list).css('height', 'auto').height();
+                                    $(list).height(curHeight).animate({
+                                        height: autoHeight + 15
+                                    }, 500);
+                                }, 1300)
                             }
                         }
                     })
