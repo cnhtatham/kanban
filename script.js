@@ -1,5 +1,5 @@
-document.getElementById("listOG").style.display = "none";
-document.getElementById("myInput").style.display = "none";
+//document.getElementById("listOG").style.display = "none";
+//document.getElementById("myInput").style.display = "none";
 document.getElementById("titleInput").style.display = "none"
 $('.List').css('display', 'none')
 
@@ -298,7 +298,7 @@ $(document).ready(function () {
                 $("#titleInput").appendTo(".List" + (listNumber + 1));
 
                 $('.List' + (listNumber)).html('<div id="toDo' + listNumber + '"class="header"></div>')
-                $('<ul id="items' + listNumber + '"></ul>').insertAfter("#toDo" + listNumber)
+                $('<ul id="items"></ul>').insertAfter("#toDo" + listNumber)
 
                 $("#toDo" + listNumber).html('<header class="title' + listNumber + '">' + listTitle + '</header>')
                 $('.title' + listNumber).toggleClass('title');
@@ -325,29 +325,75 @@ $(document).ready(function () {
 
                 addListClick = false
             }
-
+            var addCard = document.getElementsByClassName('myInput')
+            //console.log(addCard)
             for (l = 1; l <= listNumber; l++) {
                 $('#taskId' + l).click(function () {
+                    console.log(this)
                     $(this).css('display', 'none')
                     $(this).parent().children('input.myInput').css('display', 'block').focus();
                     $(document).keypress(function (e) {
-                        var inputValue = $('#myInput' + l).value
-                            if (e.which == 13 && addCardClick) {
-                                var li = document.createElement("li");
-                                console.log(l-2)
-                                console.log(inputValue)
-                                var textSpan = document.createElement("SPAN");
-                                textSpan.className = "textSpan";
-                                var text = document.createTextNode(inputValue);
-                                textSpan.appendChild(text);
-                                li.appendChild(textSpan);
-                                li.className = "cards ui-state-default";
-                                addCardClick = false
+                        if (e.which == 13) {
+                            var li = document.createElement("li");
+                            var inputValue = document.activeElement.value
+                            console.log(inputValue)
+                            var textSpan = document.createElement("SPAN");
+                            textSpan.className = "textSpan";
+                            var text = document.createTextNode(inputValue);
+                            textSpan.appendChild(text);
+                            li.appendChild(textSpan);
+                            li.className = "cards ui-state-default";
+                            addCardClick = false
+                            if (inputValue !== '') {
+                                $(document.activeElement).css('display', 'none')
+                                $(document.activeElement.parentElement.children[1]).css('display', 'block')
+                                var list = document.activeElement.parentElement.parentElement
+                                var items = list.children[1]
+                                items.appendChild(li)
+                                var iSpan = document.createElement("SPAN");
+                                var removeItem = document.createElement("i");
+                                var infoItem = document.createElement("i");
+                                var checkItem = document.createElement("i");
+                                removeItem.className = "fa fa-times cardIcons closeCard";
+                                infoItem.className = "fas fa-ellipsis-h cardIcons infoCard";
+                                checkItem.className = "fas fa-check cardIcons checkCard"
+                                iSpan.appendChild(removeItem);
+                                iSpan.appendChild(infoItem);
+                                iSpan.appendChild(checkItem);
+                                li.appendChild(iSpan);
+                                document.activeElement.value = ''
+                                curHeight = $(list).height();
+                                autoHeight = $(list).css('height', 'auto').height();
+                                $(list).height(curHeight).animate({
+                                    height: autoHeight + 15
+                                }, 500);
+                                setTimeout(function () {
+                                    $("li").animate({
+                                        opacity: "1"
+                                    }, 200)
+                                }, 500)
                             }
-                        })
+                        }
+                        var close = document.getElementsByClassName("closeCard");
+                        for (i = 0; i < close.length; i++) {
+                            close[i].onclick = function () {
+                                var list = this.parentElement.parentElement.parentElement.parentElement
+                                //$('.listOG').stop();
+                                $(this).parent().parent().fadeOut(1300, function () {
+                                    $(this).remove();
+                                });
+                                setTimeout(function () {
+                                    curHeight = $(list).height();
+                                    autoHeight = $(list).css('height', 'auto').height();
+                                    $(list).height(curHeight).animate({
+                                        height: autoHeight + 15
+                                    }, 500);
+                                }, 1300)
+                            }
+                        }
                     })
-                }
+                })
             }
-        )
+        })
     })
 })
