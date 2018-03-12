@@ -11,6 +11,7 @@ var listNumber = 1
 var width = 0
 var addListClick = true
 let theme = 'default'
+let addCardClick = true
 
 $(document).ready(function () {
 
@@ -156,7 +157,6 @@ $(document).ready(function () {
         }, 2000)
     })
 
-
     var listOGItemCount = 0
     var listOG = $('#listOG')
 
@@ -175,7 +175,6 @@ $(document).ready(function () {
                 var text = document.createTextNode(inputValue);
                 textSpan.appendChild(text);
                 li.appendChild(textSpan);
-
                 li.className = "cards ui-state-default";
                 if (inputValue !== '') {
                     document.getElementById("items").appendChild(li);
@@ -190,7 +189,6 @@ $(document).ready(function () {
                     iSpan.appendChild(infoItem);
                     iSpan.appendChild(checkItem);
                     li.appendChild(iSpan);
-
 
                     document.getElementById("myInput").value = "";
                     $('#myInput').toggle();
@@ -277,12 +275,9 @@ $(document).ready(function () {
         }
     })
 
-
-
     var listNumber = 1
     var width = 0
     var addListClick = true
-
 
     document.getElementById("AddList").addEventListener("click", function () {
         document.getElementById("titleInput").value = ''
@@ -297,15 +292,12 @@ $(document).ready(function () {
             var listTitle = document.getElementById("titleInput").value;
             if (e.which == 13 && addListClick) {
 
-
                 $('<div class="List' + (listNumber + 1) + ' List"></div>').insertAfter(".List" + listNumber);
                 $("#AddList").appendTo(".List" + (listNumber + 1));
                 $("#titleInput").appendTo(".List" + (listNumber + 1));
 
-
-
                 $('.List' + (listNumber)).html('<div id="toDo' + listNumber + '"class="header"></div>')
-                $('<ul id="items"></ul>').insertAfter("#toDo" + listNumber)
+                $('<ul id="items' + listNumber + '"></ul>').insertAfter("#toDo" + listNumber)
 
                 $("#toDo" + listNumber).html('<header class="title' + listNumber + '">' + listTitle + '</header>')
                 $('.title' + listNumber).toggleClass('title');
@@ -313,9 +305,7 @@ $(document).ready(function () {
                 $('.taskBtn' + listNumber).toggleClass('taskBtn');
                 $('<input type="text" id="myInput' + listNumber + '" placeholder="Enter...">').insertAfter("#taskId" + listNumber);
                 $('#myInput' + listNumber).addClass('myInput')
-                $('#myInput' + listNumber).css('opacity', '0');
-
-
+                $('#myInput' + listNumber).css('display', 'none');
 
                 width = (250 * listNumber) + 30
                 listNumber++
@@ -332,20 +322,31 @@ $(document).ready(function () {
                 $('#AddList').toggle();
                 $('#titleInput').toggle();
 
-
                 addListClick = false
             }
+
             for (l = 1; l <= listNumber; l++) {
                 $('#taskId' + l).click(function () {
-                    console.log(true)
-                })
+                    $(this).css('display', 'none')
+                    $(this).parent().children('input.myInput').css('display', 'block').focus();
+                    $(document).keypress(function (e) {
+                        var inputValue = $('#myInput' + l).value
+                            if (e.which == 13 && addCardClick) {
+                                var li = document.createElement("li");
+                                console.log(l-2)
+                                console.log(inputValue)
+                                var textSpan = document.createElement("SPAN");
+                                textSpan.className = "textSpan";
+                                var text = document.createTextNode(inputValue);
+                                textSpan.appendChild(text);
+                                li.appendChild(textSpan);
+                                li.className = "cards ui-state-default";
+                                addCardClick = false
+                            }
+                        })
+                    })
+                }
             }
-        })
-
-
+        )
     })
-
-
-
-
 })
