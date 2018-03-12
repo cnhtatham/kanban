@@ -306,6 +306,7 @@ a:focus {
     transform: translateX(-50%);
     padding-bottom: 3px;
     padding-top: 3px;
+    color: black;
 }
 
 
